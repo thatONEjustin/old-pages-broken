@@ -1,3 +1,6 @@
+# old site
+_site/
+
 # build output
 dist/
 # generated types
