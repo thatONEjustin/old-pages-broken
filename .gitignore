@@ -1,6 +1,9 @@
 # old site
 _site/
 
+# can someone tell me why this never works
+package-lock.json
+
 # build output
 dist/
 # generated types
