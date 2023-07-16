@@ -1,0 +1,6 @@
+@import './tailwind/colors.css';
+@import './tailwind/custom.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,15 +1,100 @@
 ---
+import BaseLayout from "../layouts/base.astro";
+import PillButton from '../components/pillButton.svelte';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+<div class="HomeContent">
+	<h2>So what do you need?</h2>
+	<div class="HomeContent-cta">
+		<PillButton href="/resume.pdf" target="_blank">My Resume</PillButton>
+		<h4>or</h4>
+		<PillButton href="/blog">A Blog</PillButton>
+	</div>
+</div>
+</BaseLayout>
+
+<div class="bubbles">
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+	<div class="bubble"></div>
+</div>
+
+<style>
+	.HomeContent {
+		@apply container
+			mx-auto
+			flex
+			flex-col
+			items-center
+			justify-center
+			top-1/2
+			relative
+			lg:-translate-y-1/2;
+	}
+
+	.HomeContent h2 {
+		@apply text-center
+			emphasis-gradient
+			bg-yellow-gradient
+			pb-4;
+	}
+
+	.HomeContent-cta {
+		@apply flex
+			flex-row
+			items-center
+			justify-center;
+	}
+
+	.HomeContent-cta > h4 {
+		@apply mx-5;
+	}
+</style>

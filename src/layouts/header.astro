@@ -1,4 +1,4 @@
-<header>
+<header class="Content--dark">
     <h1>
         <span class="splt">Hi! I'm:</span>
         <a href="#">justin<span>, a dev</span></a>
@@ -30,9 +30,13 @@
             z-50
             xl:w-10/12;
 
-        $header-shadow-size: 4px;
+        text-shadow: 4px 4px 0px var(--color-black);
 
+    }
 
+    h1 > a {
+        @apply text-right
+            font-nabla;
     }
 
     h1 span {
@@ -56,7 +60,7 @@
             xl:w-9/12;
     }
 
-    p:after {
+    header:after {
         @apply
             absolute
             w-full
@@ -70,7 +74,7 @@
 
         background-size: 20px 20px;
         background-image:
-            linear-gradient(to right, rgba($yellow-100, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba($yellow-100, 0.05) 1px, transparent 1px);
+            linear-gradient(to right, rgba(var(--color-yellow-100), 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(var(--color-yellow-100), 0.05) 1px, transparent 1px);
     }
 </style>
