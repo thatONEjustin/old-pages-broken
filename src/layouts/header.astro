@@ -1,0 +1,76 @@
+<header>
+    <h1>
+        <span class="splt">Hi! I'm:</span>
+        <a href="#">justin<span>, a dev</span></a>
+    </h1>
+
+    <p>My values are elegant code, simplified solutions, and being comfortable.</p>
+</header>
+
+<style>
+    header {
+        @apply 
+            p-4
+            bg-gradient-to-br
+            from-blue-600
+            to-blue-800
+            relative;
+    }
+
+    h1 {
+        @apply
+            flex
+            flex-col
+            text-7xl
+            font-medium
+            text-yellow-500
+            w-full
+            mx-auto
+            max-w-xl
+            z-50
+            xl:w-10/12;
+
+        $header-shadow-size: 4px;
+
+
+    }
+
+    h1 span {
+        @apply
+            text-9xl
+            font-serif;
+    }
+
+    p {
+        @apply
+            text-lg
+            mt-10
+            pl-36
+            ml-auto
+            font-sans
+            text-right
+            text-yellow-300
+            z-40
+            mx-auto
+            max-w-xl
+            xl:w-9/12;
+    }
+
+    p:after {
+        @apply
+            absolute
+            w-full
+            h-full
+            top-0
+            left-0
+            transition-all
+            ease-linear;
+
+        content: ' ';
+
+        background-size: 20px 20px;
+        background-image:
+            linear-gradient(to right, rgba($yellow-100, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba($yellow-100, 0.05) 1px, transparent 1px);
+    }
+</style>
