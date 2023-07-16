@@ -2,7 +2,7 @@
 _site/
 
 # can someone tell me why this never works
-package-lock.json
+./package-lock.json
 
 # build output
 dist/
