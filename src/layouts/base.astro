@@ -29,62 +29,62 @@ import Footer from '../layouts/footer.astro';
 </html>
 
 <style is:global>
-	body {
-		@apply
-			h-full
-			w-full
-			sm:overflow-hidden;
-	}
+body {
+	@apply
+		h-full
+		w-full
+		sm:overflow-hidden;
+}
 
-	@screen sm {
-		main {
-			@apply flex
-				flex-row;
-			height: calc(100vh - 40px);
-		}
-	}
-
-	header, section.Content {
-		@apply transition-all
-			lg:h-full;
-	}
-
-	@screen sm {
-		header, section.Content {			
-			@apply  w-full;
-
-			max-height: calc(100vh - 40px);
-			@apply h-full;
-		}
-	}
-
-	@screen lg {
-		header, section.Content {
-			@apply w-1/2;
-		}
-	}
-
-	section.Content {
-		min-height: calc(100vh - 330px);
-		@apply h-full
-			sm:max-h-[unset];
-	}
-
-	header {
+@screen sm {
+	main {
 		@apply flex
-			flex-col
-			items-start
-			justify-center;
+			flex-row;
+		height: calc(100vh - 40px);
 	}
+}
 
-	section.Content {
-		@apply pb-10
-			sm:pb-4
-			sm:overflow-hidden
-			sm:overflow-y-auto;
-	}
+header, section.Content {
+	@apply transition-all
+		lg:h-full;
+}
 
-	section.Content.Content--dark {
-		@apply bg-black;
+@screen sm {
+	header, section.Content {			
+		@apply  w-full;
+
+		max-height: calc(100vh - 40px);
+		@apply h-full;
 	}
+}
+
+@screen lg {
+	header, section.Content {
+		@apply w-1/2;
+	}
+}
+
+section.Content {
+	min-height: calc(100vh - 330px);
+	@apply h-full
+		sm:max-h-[unset];
+}
+
+header {
+	@apply flex
+		flex-col
+		items-start
+		justify-center;
+}
+
+section.Content {
+	@apply pb-10
+		sm:pb-4
+		sm:overflow-hidden
+		sm:overflow-y-auto;
+}
+
+section.Content.Content--dark {
+	@apply bg-black;
+}
 </style>

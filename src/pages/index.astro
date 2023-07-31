@@ -4,17 +4,17 @@ import PillButton from '../components/pillButton.svelte';
 ---
 
 <BaseLayout>
-<div class="HomeContent">
-	<h2>So what do you need?</h2>
-	<div class="HomeContent-cta">
+<div class="Home">
+	<h2 class="text-center emphasis-gradient bg-yellow-gradient pb-4">So what do you need?</h2>
+	<div class="Cta">
 		<PillButton href="/resume.pdf" target="_blank">My Resume</PillButton>
-		<h4>or</h4>
+		<h4 class="mx-5">or</h4>
 		<PillButton href="/blog">A Blog</PillButton>
 	</div>
 </div>
 </BaseLayout>
 
-<div class="bubbles">
+<!-- <div class="bubbles">
 	<div class="bubble"></div>
 	<div class="bubble"></div>
 	<div class="bubble"></div>
@@ -65,10 +65,10 @@ import PillButton from '../components/pillButton.svelte';
 	<div class="bubble"></div>
 	<div class="bubble"></div>
 	<div class="bubble"></div>
-</div>
+</div> -->
 
 <style>
-	.HomeContent {
+	.Home {
 		@apply container
 			mx-auto
 			flex
@@ -80,23 +80,11 @@ import PillButton from '../components/pillButton.svelte';
 			lg:-translate-y-1/2;
 	}
 
-	.HomeContent h2 {
-		@apply text-center
-			pb-4;
 
-		/* 
-			emphasis-gradient
-			bg-yellow-gradient */
-	}
-
-	.HomeContent-cta {
+	.Cta {
 		@apply flex
 			flex-row
 			items-center
 			justify-center;
-	}
-
-	.HomeContent-cta > h4 {
-		@apply mx-5;
 	}
 </style>
