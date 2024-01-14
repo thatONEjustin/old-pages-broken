@@ -1,14 +1,14 @@
 <script>
-    export let href = '#';
-    export let target='_self';
+  export let href = "#";
+  export let target = "_self";
 </script>
 
-<a href={href} target={target}>
-    <slot>Button Text</slot>
+<a {href} {target}>
+  <slot>Button Text</slot>
 </a>
 
-<style lang="css">
-a {
+<style lang="postcss">
+  a {
     @apply py-3
         px-5
         bg-yellow-200
@@ -16,10 +16,10 @@ a {
         rounded-md
         relative
         overflow-hidden;
-}
+  }
 
-a::before {
-    content: '';
+  a::before {
+    content: "";
 
     @apply bg-white
         bg-opacity-25
@@ -32,9 +32,10 @@ a::before {
 
     transform: skew(45deg);
     transition: left 500ms ease-out;
-}
+  }
 
-a:hover::before {
+  a:hover::before {
     @apply left-[125%];
-}
+  }
 </style>
+
