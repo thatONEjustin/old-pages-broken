@@ -1,22 +1,35 @@
 ---
-import type { MenuItem } from "@js/data/menu";
-
+import Menu from "@components/menu/Menu.astro";
 import { menu_data } from "@js/data/menu";
 ---
 
 <header>
-  <div class="container mx-auto w-full flex flex-row justify-between">
-    <div class="nf nf-dev-terminal">
-      {"{justin}"}
+  <div class="container mx-auto w-full flex flex-row justify-between py-3">
+    <div class="text-3xl flex flex-row items-center justify-center">
+      <i class="text-4xl nf nf-dev-terminal text-pink mr-2"> </i>
+      <h1>justin</h1>
+      <span class="sr-only">Justin Paelmo, full stack developer</span>
     </div>
-    <ul class="flex flex-row">
-      {
-        menu_data.map((item: MenuItem) => (
-          <li>
-            <a href={item.url}>{item.label}</a>
-          </li>
-        ))
-      }
-    </ul>
+    <Menu items={menu_data} />
   </div>
 </header>
+
+<style lang="postcss">
+header h1 {
+  @apply relative flex flex-row items-start justify-center text-yellow -mt-1;
+
+  &::before, &::after {
+    @apply text-cyan;
+  }
+
+  &::before {
+    @apply mr-1;
+    content: '{';
+  }
+
+  &::after {
+    @apply ml-1;
+    content: '}';
+  }
+}
+</style>

@@ -1,20 +1,23 @@
 ---
-import BaseLayout from "../layouts/base.astro";
-// import PillButton from "../components/pillButton.svelte";
+import BaseLayout from "@layouts/base.astro";
 import PillButton from "@components/pillButton.astro";
 ---
 
 <BaseLayout>
-  <div class="Home">
-    <h2 class="text-center emphasis-gradient bg-yellow-gradient pb-4">
-      So what do you need?
-    </h2>
-    <div class="flex flex-row items-start justify-start">
+  <div class="container mx-auto w-full flex flex-col items-center">
+    <h2 class="text-4xl pb-4 font-bold">so what do you need?</h2>
+    <div class="flex flex-row items-start justify-start mx-auto">
       <PillButton url="/work">a short bit about me</PillButton>
-      <h4 class="mx-5">,</h4>
+      <h4>,</h4>
       <PillButton url="/resume.pdf" target="_blank">my Resume</PillButton>
-      <h4 class="mx-5">or</h4>
+      <h4>or</h4>
       <PillButton url="/blog">some thoughts?</PillButton>
     </div>
   </div>
 </BaseLayout>
+
+<style lang="postcss">
+h4 {
+  @apply text-light-400 font-bold;
+}
+</style>

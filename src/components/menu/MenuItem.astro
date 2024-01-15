@@ -1,0 +1,21 @@
+---
+const { item } = Astro.props;
+---
+
+<li class="MainMenuItem mr-3 last:mr-0">
+  <a href={item.url}>{item.label}</a>
+</li>
+
+<style lang="postcss">
+.MainMenuItem {
+  a {
+    @apply relative;
+    
+    &::after {
+      @apply absolute bottom-0 left-0;
+      content: '';
+      @apply h-[2px] w-0 bg-darker origin-center transition-all;
+    }
+  }
+}
+</style>

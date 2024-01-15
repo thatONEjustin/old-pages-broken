@@ -13,6 +13,10 @@ export const menu_data: MenuItem[] = [
     'url': '/work'
   },
   {
+    'label': 'blog',
+    'url': '/blog'
+  },
+  {
     'label': 'git',
     'url': 'https://github.com/thatONEjustin'
   }
