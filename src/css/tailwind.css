@@ -1,7 +1,15 @@
-@import './tailwind/colors.css';
-@import './tailwind/custom.css';
-@import './theme.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+}
+
+@layer components {
+
+}
+
+@layer utilities {
+
+}

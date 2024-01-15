@@ -1,5 +1,5 @@
 ---
-// import "../css/tailwind.css";
+import "../css/tailwind.css";
 
 import Header from "@layouts/header.astro";
 import Footer from "@layouts/footer.astro";
@@ -20,12 +20,10 @@ import Footer from "@layouts/footer.astro";
     />
   </head>
   <body>
+    <Header />
     <main>
-      <Header />
-      <section class="Content p-5 Content--dark">
-        <slot />
-      </section>
-      <Footer />
+      <slot />
     </main>
+    <Footer />
   </body>
 </html>

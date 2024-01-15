@@ -1,0 +1,7 @@
+---
+const { url = "#", target } = Astro.props;
+---
+
+<a href={url} {target}>
+  <slot>Button Text</slot>
+</a>

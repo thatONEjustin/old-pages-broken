@@ -1,90 +1,20 @@
 ---
 import BaseLayout from "../layouts/base.astro";
-import PillButton from '../components/pillButton.svelte';
+// import PillButton from "../components/pillButton.svelte";
+import PillButton from "@components/pillButton.astro";
 ---
 
 <BaseLayout>
-<div class="Home">
-	<h2 class="text-center emphasis-gradient bg-yellow-gradient pb-4">So what do you need?</h2>
-	<div class="Cta">
-		<PillButton href="/resume.pdf" target="_blank">My Resume</PillButton>
-		<h4 class="mx-5">or</h4>
-		<PillButton href="/blog">A Blog</PillButton>
-	</div>
-</div>
+  <div class="Home">
+    <h2 class="text-center emphasis-gradient bg-yellow-gradient pb-4">
+      So what do you need?
+    </h2>
+    <div class="flex flex-row items-start justify-start">
+      <PillButton url="/work">a short bit about me</PillButton>
+      <h4 class="mx-5">,</h4>
+      <PillButton url="/resume.pdf" target="_blank">my Resume</PillButton>
+      <h4 class="mx-5">or</h4>
+      <PillButton url="/blog">some thoughts?</PillButton>
+    </div>
+  </div>
 </BaseLayout>
-
-<!-- <div class="bubbles">
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-	<div class="bubble"></div>
-</div> -->
-
-<style>
-	.Home {
-		@apply container
-			mx-auto
-			flex
-			flex-col
-			items-center
-			justify-center
-			top-1/2
-			relative
-			lg:-translate-y-1/2;
-	}
-
-
-	.Cta {
-		@apply flex
-			flex-row
-			items-center
-			justify-center;
-	}
-</style>

@@ -1,15 +1,15 @@
 ---
-import { MenuItem } from "@js/data/menu";
-
-const { title = "hi, my name is justin" } = Astro.props;
+import type { MenuItem } from "@js/data/menu";
 
 import { menu_data } from "@js/data/menu";
 ---
 
 <header>
-  <div class="container mx-auto w-full flex flex-row">
-    <h1>{title}</h1>
-    <ul>
+  <div class="container mx-auto w-full flex flex-row justify-between">
+    <div class="nf nf-dev-terminal">
+      {"{justin}"}
+    </div>
+    <ul class="flex flex-row">
       {
         menu_data.map((item: MenuItem) => (
           <li>
