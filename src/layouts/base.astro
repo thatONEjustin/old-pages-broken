@@ -1,90 +1,31 @@
 ---
-import '../css/tailwind.css';
+// import "../css/tailwind.css";
 
-import Header from '../layouts/header.astro';
-import Footer from '../layouts/footer.astro';
+import Header from "@layouts/header.astro";
+import Footer from "@layouts/footer.astro";
 ---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>justin, a Dev | astro'd out</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Delicious+Handrawn&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-	</head>
-	<body>
-        <main>
-			<Header />
-            <section class="Content p-5 Content--dark">
-				<slot />
-			</section>
-			<Footer />
-		</main>
-
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>justin, a Dev | astro'd out</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nabla&family=Delicious+Handrawn&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <Header />
+      <section class="Content p-5 Content--dark">
+        <slot />
+      </section>
+      <Footer />
+    </main>
+  </body>
 </html>
-
-<style is:global>
-body {
-	@apply
-		h-full
-		w-full
-		sm:overflow-hidden;
-}
-
-@screen sm {
-	main {
-		@apply flex
-			flex-row;
-		height: calc(100vh - 40px);
-	}
-}
-
-header, section.Content {
-	@apply transition-all
-		lg:h-full;
-}
-
-@screen sm {
-	header, section.Content {			
-		@apply  w-full;
-
-		max-height: calc(100vh - 40px);
-		@apply h-full;
-	}
-}
-
-@screen lg {
-	header, section.Content {
-		@apply w-1/2;
-	}
-}
-
-section.Content {
-	min-height: calc(100vh - 330px);
-	@apply h-full
-		sm:max-h-[unset];
-}
-
-header {
-	@apply flex
-		flex-col
-		items-start
-		justify-center;
-}
-
-section.Content {
-	@apply pb-10
-		sm:pb-4
-		sm:overflow-hidden
-		sm:overflow-y-auto;
-}
-
-section.Content.Content--dark {
-	@apply bg-black;
-}
-</style>

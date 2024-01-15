@@ -1,80 +1,22 @@
-<header class="Content--dark">
-    <h1>
-        <span class="splt">Hi! I'm:</span>
-        <a href="#">justin<span>, a dev</span></a>
-    </h1>
+---
+import { MenuItem } from "@js/data/menu";
 
-    <p>My values are elegant code, simplified solutions, and being comfortable.</p>
+const { title = "hi, my name is justin" } = Astro.props;
+
+import { menu_data } from "@js/data/menu";
+---
+
+<header>
+  <div class="container mx-auto w-full flex flex-row">
+    <h1>{title}</h1>
+    <ul>
+      {
+        menu_data.map((item: MenuItem) => (
+          <li>
+            <a href={item.url}>{item.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </header>
-
-<style>
-    header {
-        @apply 
-            p-4
-            bg-gradient-to-br
-            from-blue-600
-            to-blue-800
-            relative;
-    }
-
-    h1 {
-        @apply
-            flex
-            flex-col
-            text-7xl
-            font-medium
-            text-yellow-500
-            w-full
-            mx-auto
-            max-w-xl
-            z-50
-            xl:w-10/12;
-
-        text-shadow: 4px 4px 0px var(--color-black);
-
-    }
-
-    h1 > a {
-        @apply text-right
-            font-nabla;
-    }
-
-    h1 span {
-        @apply
-            text-9xl
-            font-serif;
-    }
-
-    p {
-        @apply
-            text-lg
-            mt-10
-            pl-36
-            ml-auto
-            font-sans
-            text-right
-            text-yellow-300
-            z-40
-            mx-auto
-            max-w-xl
-            xl:w-9/12;
-    }
-
-    header:after {
-        @apply
-            absolute
-            w-full
-            h-full
-            top-0
-            left-0
-            transition-all
-            ease-linear;
-
-        content: ' ';
-
-        background-size: 20px 20px;
-        background-image:
-            linear-gradient(to right, rgba(var(--color-yellow-100), 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(var(--color-yellow-100), 0.05) 1px, transparent 1px);
-    }
-</style>
