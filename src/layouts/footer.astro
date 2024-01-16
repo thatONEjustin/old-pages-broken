@@ -1,11 +1,47 @@
-<footer>
-  <ul class="Footer-tech">
-    <li class="pr-3 border-r border-yellow-500">
-      <span class="font-semibold">hosted on</span>
-      <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
-    </li>
-  </ul>
-  <div>
-    <p><span>copyright</span> 2023</p>
+---
+import moment from "moment";
+const tech_stacks = [
+  {
+    tagline: "built from",
+    url: "https://astro.build/",
+    label: "astro",
+    icon: "nf-md-arch text-pink",
+  },
+  {
+    tagline: "styled with",
+    url: "https://tailwindcss.com/",
+    label: "tailwindcss",
+    icon: "nf-md-tailwind text-cyan",
+  },
+  {
+    tagline: "hosted on",
+    url: "https://pages.github.com/",
+    label: "GitHub Pages",
+    icon: "nf-cod-github_action text-white",
+  },
+];
+---
+
+<footer class="fixed top-full -translate-y-full w-full">
+  <div class="relative container w-full mx-auto flex flex-row justify-between">
+    <ul class="flex flex-row py-1">
+      {
+        tech_stacks.map((technology, _index) => (
+          <li class="text-yellow mr-2 last:mr-0">
+            {technology.tagline != "" && (
+              <span class="font-semibold">{technology.tagline}</span>
+            )}
+            <a href={technology.url} target="_blank" class="text-cyan">
+              {technology.icon && <i class=`nf ${technology.icon}`> </i>}
+              {technology.label}
+              {/* {index + 1 !== tech_stacks.length && ','}  */}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="copyright">
+      <p class="font-semibold text-darker-300 text-sm italic"><span class="font-normal">copyright</span> {moment().year()}</p>
+    </div>
   </div>
 </footer>

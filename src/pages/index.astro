@@ -1,23 +1,51 @@
 ---
 import BaseLayout from "@layouts/base.astro";
 import PillButton from "@components/pillButton.astro";
+
+import { social_media } from "@js/data/social";
 ---
 
 <BaseLayout>
-  <div class="container mx-auto w-full flex flex-col items-center">
-    <h2 class="text-4xl pb-4 font-bold">so what do you need?</h2>
-    <div class="flex flex-row items-start justify-start mx-auto">
-      <PillButton url="/work">a short bit about me</PillButton>
-      <h4>,</h4>
-      <PillButton url="/resume.pdf" target="_blank">my Resume</PillButton>
-      <h4>or</h4>
-      <PillButton url="/blog">some thoughts?</PillButton>
+  <section class="fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
+    <div class="flex flex-row w-full mx-auto p-0">
+      <div class="w-1/2 bg-dark py-5 rounded-tl rounded-bl">
+        <h3>get to know me</h3>
+        <div class="grid grid-cols-3 gap-x-3">
+          <PillButton color="cyan" url="/work">a bit about me</PillButton>
+          <PillButton color="green" url="/resume.pdf" target="_blank">my resume</PillButton>
+          <PillButton color="pink" url="/blog">some thoughts?</PillButton>
+        </div>
+      </div>
+      <div class="bg-dark border-l-2 border-l-blue w-1/2 py-5 px-2 ml-6">
+        <div class="pl-4">
+          <h3>social media</h3>
+          <ul class="flex flex-row">
+          {social_media.map((item) =>
+            <li class="mr-4 last:mr-0 text-4xl">
+              <a href={item.url} target="_blank">
+                <i class=`nf ${item.icon} ${item.classes}`></i>
+              </a>
+            </li>
+          )}
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+  <section>
+    <div class="container mx-auto w-full">
+      <h3>some projects I'm working on</h3>
+
+    </div>
+  </section>
 </BaseLayout>
 
 <style lang="postcss">
-h4 {
-  @apply text-light-400 font-bold;
-}
+  h3 {
+    @apply text-yellow text-4xl pb-4 font-bold;
+  }
+
+  h4 {
+    @apply text-light-400 font-bold;
+  }
 </style>

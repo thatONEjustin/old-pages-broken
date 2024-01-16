@@ -16,8 +16,4 @@ export const menu_data: MenuItem[] = [
     'label': 'blog',
     'url': '/blog'
   },
-  {
-    'label': 'git',
-    'url': 'https://github.com/thatONEjustin'
-  }
 ]

@@ -11,5 +11,13 @@
 }
 
 @layer utilities {
+  .fancy-border {
+    @apply relative;
 
+  }
+
+  .fancy-border:after {
+    @apply absolute h-[2px] w-full bg-gradient-to-r from-blue to-cyan bottom-0 left-0;
+    content: ' ';
+  }
 }

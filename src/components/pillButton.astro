@@ -1,24 +1,53 @@
 ---
-const { url = "#", target } = Astro.props;
-
-const possible_colors = [
-  "text-cyan",
-  "text-pink",
-  "text-yellow",
-  "text-purple",
-];
+const { url = "#", target, color = "cyan" } = Astro.props;
 ---
 
-<a
-  class={possible_colors[Math.floor(Math.random() * possible_colors.length)]}
-  href={url}
-  {target}
->
+<a class={`${color}`} href={url} {target}>
   <slot>Button Text</slot>
 </a>
 
 <style lang="postcss">
 a {
-  @apply px-3;
+  @apply px-3 py-2 rounded-sm text-center text-darker font-bold bg-transparent border-b-2 transition-all;
+
+  &.green {
+    @apply border-green text-green;
+
+    &:hover {
+      @apply border-transparent text-darker bg-green;
+    }
+  }
+
+  &.cyan {
+    @apply border-cyan text-cyan;
+
+    &:hover {
+      @apply border-transparent text-darker bg-cyan;
+    }
+  }
+
+  &.pink {
+    @apply border-pink text-pink;
+
+    &:hover {
+      @apply border-transparent text-darker bg-pink;
+    }
+  }
+
+  &.purple {
+    @apply border-purple text-purple;
+
+    &:hover {
+      @apply border-transparent text-darker bg-purple;
+    }
+  }
+
+  &.yellow {
+    @apply border-yellow text-yellow;
+
+    &:hover {
+      @apply border-transparent text-darker bg-yellow;
+    }
+  }
 }
 </style>
