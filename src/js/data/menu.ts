@@ -9,8 +9,8 @@ export const menu_data: MenuItem[] = [
     'url': '/'
   },
   {
-    'label': 'work',
-    'url': '/work'
+    'label': 'about',
+    'url': '/about-me'
   },
   {
     'label': 'blog',

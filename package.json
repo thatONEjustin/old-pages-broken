@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.7",
-    "@astrojs/svelte": "^3.1.0",
-    "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.8.3",
+    "@astrojs/mdx": "^2.0.4",
+    "@astrojs/svelte": "^5.0.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.1.2",
     "moment": "^2.30.1",
     "svelte": "^4.0.5",
     "tailwind-dracula": "^1.1.0",
