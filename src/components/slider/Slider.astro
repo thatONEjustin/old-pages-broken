@@ -1,0 +1,24 @@
+---
+import SwiperSlide from './Slide.astro'
+import 'swiper/css';
+const { items = [] } = Astro.props
+
+console.log(items)
+---
+
+<script>
+import Swiper from 'swiper';
+
+const _slideshow = new Swiper('.swiper', {})
+</script>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    {items.map(slide => {
+      <SwiperSlide>
+        {/* <h4>{slide.title}</h4> */}
+      </SwiperSlide>
+    })}
+  </div>
+</div>
