@@ -1,7 +1,13 @@
 ---
 import SwiperSlide from './Slide.astro'
 import 'swiper/css';
+import { marked } from 'marked';
+
 const { items:slides = [] } = Astro.props
+
+const parse_markdown = text => {
+ return marked.parse(text) 
+}
 ---
 
 <script>
@@ -20,8 +26,24 @@ const _slideshow = new Swiper('.swiper', {})
     {slides.map(item => 
       <SwiperSlide>
         <h2>{item.data.title}</h1>
-        <Fragment set:html={item.body} />
+        <Fragment set:html={parse_markdown(item.body)} />
       </SwiperSlide>
     )}
   </div>
 </div>
+
+<style is:global>
+.swiper {
+  h2 {
+    @apply text-4xl text-orange mb-4;
+  }
+
+  h3 {
+    @apply text-3xl text-orange lowercase italic mb-4;
+  }
+
+  p {
+    @apply text-2xl text-darker-100 mb-8;
+  }
+}
+</style>
