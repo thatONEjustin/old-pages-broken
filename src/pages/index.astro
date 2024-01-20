@@ -8,10 +8,8 @@ import { social_media } from "@js/data/social";
 import { getCollection, getEntries } from 'astro:content'
 
 const projects_collection = await getCollection('projects')
-// console.log(projects_collection)
-const projects = await getEntries(projects_collection)
+console.log(projects_collection)
 
-// console.log(projects_collection)
 // console.log(projects)
 ---
 
@@ -45,7 +43,7 @@ const projects = await getEntries(projects_collection)
   <section>
     <div class="container mx-auto w-full">
       <h3>some projects I'm working on</h3>
-      <Slider items={projects} />
+      <Slider items={projects_collection} />
     </div>
   </section>
 </BaseLayout>

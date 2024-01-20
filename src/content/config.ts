@@ -17,33 +17,7 @@ const blog = defineCollection({
   }),
 });
 
-const projects = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-  })
-})
-// const projects = defineCollection({
-//   type: 'data',
-//   schema: z.object({
-//     title: z.string(),
-//     date: z
-//       .string()
-//       .or(z.date())
-//       .transform((val) => new Date(val)),
-//     updatedDate: z
-//       .string()
-//       .optional()
-//       .transform((str) => (str ? new Date(str) : undefined)),
-//     summary: z.string(),
-//     images: z.array(
-//       z.object({
-//         title: z.string(),
-//         url: z.string()
-//       })
-//         .optional()
-//     ).optional()
-//   })
-// })
 
-export const collections = { blog, projects };
+export const collections = {
+  "blog": blog,
+};

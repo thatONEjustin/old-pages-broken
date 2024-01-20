@@ -1,9 +1,7 @@
 ---
-title: "Just a calendar"
-date: January 17, 2024
-summary: "Been working on something" 
-images: []
+title: "Just A Calendar"
 ---
 
-<h2>Test</h2>
+### Okay gotta juggle markdown 
 
+Just a calendar widget I'm building. I'll have an import soon enough.

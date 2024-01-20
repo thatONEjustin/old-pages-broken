@@ -1,9 +1,7 @@
 ---
 import SwiperSlide from './Slide.astro'
 import 'swiper/css';
-const { items = [] } = Astro.props
-
-console.log(items)
+const { items:slides = [] } = Astro.props
 ---
 
 <script>
@@ -14,11 +12,16 @@ const _slideshow = new Swiper('.swiper', {})
 
 <div class="swiper">
   <div class="swiper-wrapper">
-    <!-- Slides -->
-    {items.map(slide => {
+
+    <!-- <div class="swiper-slide">huh</div> -->
+    <!-- <div class="swiper-slide">huh</div> -->
+    <!-- <div class="swiper-slide">huh</div> -->
+    <!-- <div class="swiper-slide">huh</div> -->
+    {slides.map(item => 
       <SwiperSlide>
-        {/* <h4>{slide.title}</h4> */}
+        <h2>{item.data.title}</h1>
+        <Fragment set:html={item.body} />
       </SwiperSlide>
-    })}
+    )}
   </div>
 </div>
