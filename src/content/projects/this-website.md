@@ -1,5 +1,6 @@
 ---
 title: "My personal site"
+date: January 19, 2024
 ---
 
 So this has been a really cool programming exercise as I utilize astro and tailwind to build a site that acts as if it's dynamic but is being 100% rendered statically through GitHub Pages. 

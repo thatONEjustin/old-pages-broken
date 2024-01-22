@@ -1,16 +1,26 @@
 ---
+import moment from "moment";
+
 import BaseLayout from "@layouts/base.astro";
 import PillButton from "@components/pillButton.astro";
 
 import Slider from "@components/slider/Slider.astro";
 import { social_media } from "@js/data/social";
 
-import { getCollection, getEntries } from 'astro:content'
+import { getCollection } from 'astro:content'
 
 const projects_collection = await getCollection('projects')
-console.log(projects_collection)
 
-// console.log(projects)
+const projects = projects_collection.sort((a,b)=> {
+  const a_date = moment(a.data.date)
+  const b_date = moment(b.data.date)
+
+  if(a_date.isAfter(b_date)) {
+    return -1
+  }
+
+  return 0
+})
 ---
 
 <BaseLayout>
@@ -32,6 +42,7 @@ console.log(projects_collection)
             <li class="mr-4 last:mr-0 text-4xl">
               <a href={item.url} target="_blank">
                 <i class=`nf ${item.icon} ${item.classes}`></i>
+                <span class="sr-only">{item.label}</span>
               </a>
             </li>
           )}
@@ -43,7 +54,9 @@ console.log(projects_collection)
   <section>
     <div class="container mx-auto w-full">
       <h3>some projects I'm working on</h3>
-      <Slider items={projects_collection} />
+      <div class="p-8 rounded-lg border border-cyan border-opacity-30">
+        <Slider items={projects} />
+      </div>
     </div>
   </section>
 </BaseLayout>

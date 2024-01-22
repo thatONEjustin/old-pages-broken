@@ -1,34 +1,49 @@
 ---
 import SwiperSlide from './Slide.astro'
+// import 'swiper/css';
 import 'swiper/css';
+import 'swiper/css/navigation';
+
 import { marked } from 'marked';
 
 const { items:slides = [] } = Astro.props
 
-const parse_markdown = text => {
+const parse_markdown = (text:string) => {
  return marked.parse(text) 
 }
 ---
 
 <script>
+import { Navigation } from 'swiper/modules';
 import Swiper from 'swiper';
 
-const _slideshow = new Swiper('.swiper', {})
+const _slideshow = new Swiper('.swiper', {
+  modules: [Navigation],
+  navigation: {
+    enabled: true,
+    nextEl: '.justin-next',
+    prevEl: '.justin-prev',
+  }
+})
 </script>
 
 <div class="swiper">
   <div class="swiper-wrapper">
-
-    <!-- <div class="swiper-slide">huh</div> -->
-    <!-- <div class="swiper-slide">huh</div> -->
-    <!-- <div class="swiper-slide">huh</div> -->
-    <!-- <div class="swiper-slide">huh</div> -->
-    {slides.map(item => 
+    {slides.map(item =>
       <SwiperSlide>
         <h2>{item.data.title}</h1>
         <Fragment set:html={parse_markdown(item.body)} />
       </SwiperSlide>
     )}
+  </div>
+  <div class="flex flex-row">
+    <div class="justin-prev">
+      <i class="nf nf-cod-arrow_left"></i>
+    </div>
+
+    <div class="justin-next">
+      <i class="nf nf-cod-arrow_right"></i>
+    </div>
   </div>
 </div>
 
@@ -44,6 +59,25 @@ const _slideshow = new Swiper('.swiper', {})
 
   p {
     @apply text-2xl text-darker-100 mb-8;
+  }
+
+  .justin {
+    &-next, &-prev {
+      @apply text-cyan cursor-pointer;
+      @apply origin-center transition-all;
+
+      &:hover {
+        @apply scale-125;
+      }
+
+      &.swiper-button-disabled {
+        @apply text-opacity-30 pointer-events-none;
+      }
+    }
+
+    &-prev {
+      @apply mr-2;
+    }
   }
 }
 </style>
