@@ -24,9 +24,9 @@ const projects = projects_collection.sort((a,b)=> {
 ---
 
 <BaseLayout>
-  <section class="fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
-    <div class="flex flex-row w-full mx-auto p-0">
-      <div class="w-1/2 bg-dark py-5 rounded-tl rounded-bl">
+  <section class="lg:fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
+    <div class="flex flex-col lg:flex-row w-full mx-auto px-4 lg:p-0">
+      <div class="w-full lg:w-1/2 bg-dark py-5 rounded-tl rounded-bl">
         <h3>get to know me</h3>
         <div class="grid grid-cols-3 gap-x-3">
           <PillButton color="cyan" url="/about-me">a bit about me</PillButton>
@@ -34,8 +34,8 @@ const projects = projects_collection.sort((a,b)=> {
           <PillButton color="pink" url="/blog">some thoughts?</PillButton>
         </div>
       </div>
-      <div class="bg-dark border-l-2 border-l-blue w-1/2 py-5 px-2 ml-6">
-        <div class="pl-4">
+      <div class="bg-dark lg:border-l-2 border-l-blue w-11/12 lg:w-1/2 py-5 px-2 ml-0 lg:ml-6">
+        <div class="pl-0 lg:pl-4">
           <h3>social media</h3>
           <ul class="flex flex-row">
           {social_media.map((item) =>
@@ -52,7 +52,7 @@ const projects = projects_collection.sort((a,b)=> {
     </div>
   </section>
   <section>
-    <div class="container mx-auto w-full">
+    <div class="container mx-auto w-11/12 lg:w-full">
       <h3>some projects I'm working on</h3>
       <div class="p-8 rounded-lg border border-cyan border-opacity-30">
         <Slider items={projects} />

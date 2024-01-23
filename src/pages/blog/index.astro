@@ -1,4 +1,6 @@
 ---
+import moment from 'moment';
+
 import BaseLayout from "../../layouts/base.astro";
 
 import { getCollection } from "astro:content";
@@ -6,21 +8,20 @@ import { getCollection } from "astro:content";
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
 );
+
 ---
 
 <BaseLayout>
-  <section>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}/`}>
-              <h2 class="title">{post.data.title}</h2>
-              <p class="date">{post.data.date}</p>
-            </a>
-          </li>
-        ))
-      }
+  <section class="container mx-auto w-11/12 lg:w-full mt-6">
+    <ul class="w-full">
+      {posts.map((post) => (
+        <li class="border-2 border-dark-100 bg-darker-800 rounded-md border-opacity-15 mb-4">
+          <a class="flex flex-row justify-between p-2 text-cyan" href={`/blog/${post.slug}/`}>
+            <h3 class="title w-full self-start">{post.data.title}</h3>
+            <p class="date w-full text-right self-end text-green">{moment(post.data.date).format("dddd MMM YYYY")}</p>
+          </a>
+        </li>
+      ))}
     </ul>
   </section>
 </BaseLayout>
