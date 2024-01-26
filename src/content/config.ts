@@ -30,7 +30,7 @@ const projects = defineCollection({
       .string()
       .optional()
       .transform((str) => (str ? new Date(str) : undefined)),
-    images: z.array().optional(),
+    images: z.array(z.string()).optional(),
   }),
 })
 

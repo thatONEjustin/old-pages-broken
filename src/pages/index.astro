@@ -7,7 +7,7 @@ import PillButton from "@components/pillButton.astro";
 import Slider from "@components/slider/Slider.astro";
 import { social_media } from "@js/data/social";
 
-import { getCollection } from 'astro:content'
+import { getCollection, getEntries } from 'astro:content'
 
 const projects_collection = await getCollection('projects')
 
@@ -21,6 +21,10 @@ const projects = projects_collection.sort((a,b)=> {
 
   return 0
 })
+
+const project_entries = getEntries(projects)
+
+// console.log(project_entries)
 ---
 
 <BaseLayout>
