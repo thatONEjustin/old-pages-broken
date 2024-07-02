@@ -5,11 +5,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const { items:slides = [] } = Astro.props
+
 ---
 
-<script>
-import { Navigation } from 'swiper/modules';
-import Swiper from 'swiper';
+<script type="module" is:inline data-astro-rerun>
+import { Navigation } from '../../../node_modules/swiper/modules';
+import Swiper from '../../../node_modules/swiper';
+// import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
 const _slideshow = new Swiper('.swiper', {
   modules: [Navigation],
