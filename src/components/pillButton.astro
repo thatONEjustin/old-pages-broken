@@ -1,5 +1,5 @@
 ---
-const { url = "#", target, color = "cyan" } = Astro.props;
+const { url = "#", target, color = "default" } = Astro.props;
 ---
 
 <a class={`${color}`} href={url} {target}>
@@ -9,6 +9,14 @@ const { url = "#", target, color = "cyan" } = Astro.props;
 <style lang="postcss">
 a {
   @apply px-3 py-2 rounded-sm text-center text-darker font-bold bg-transparent border-b-2 transition-all;
+
+  &.default {
+    @apply border-darker text-darker;
+
+    &:hover {
+      @apply border-transparent text-light bg-darker;
+    }
+  }
 
   &.green {
     @apply border-green text-green;

@@ -12,14 +12,7 @@ import { getCollection, getEntries } from 'astro:content'
 const projects_collection = await getCollection('projects')
 
 const projects = projects_collection.sort((a,b)=> {
-  const a_date = moment(a.data.date)
-  const b_date = moment(b.data.date)
-
-  if(a_date.isAfter(b_date)) {
-    return -1
-  }
-
-  return 0
+  return moment(a.data.date).isAfter(moment(b.data.date));
 })
 
 const project_entries = getEntries(projects)
@@ -30,7 +23,7 @@ const project_entries = getEntries(projects)
 <BaseLayout>
   <section class="lg:fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
     <div class="flex flex-col lg:flex-row w-full mx-auto px-4 lg:p-0">
-      <div class="w-full lg:w-1/2 bg-dark py-5 rounded-tl rounded-bl">
+      <div class="w-full lg:w-1/2 py-5 rounded-tl rounded-bl">
         <h3>get to know me</h3>
         <div class="grid grid-cols-3 gap-x-3">
           <PillButton color="cyan" url="/about-me">a bit about me</PillButton>
@@ -38,7 +31,7 @@ const project_entries = getEntries(projects)
           <PillButton color="pink" url="/blog">some thoughts?</PillButton>
         </div>
       </div>
-      <div class="bg-dark lg:border-l-2 border-l-blue w-11/12 lg:w-1/2 py-5 px-2 ml-0 lg:ml-6">
+      <div class="lg:border-l-2 border-l-blue w-11/12 lg:w-1/2 py-5 px-2 ml-0 lg:ml-6">
         <div class="pl-0 lg:pl-4">
           <h3>social media</h3>
           <ul class="flex flex-row">
@@ -58,7 +51,7 @@ const project_entries = getEntries(projects)
   <section>
     <div class="container mx-auto w-11/12 lg:w-full">
       <h3>some projects I'm working on</h3>
-      <div class="p-8 rounded-lg border border-cyan border-opacity-30">
+      <div class="p-8 border border-buffy border-opacity-30">
         <Slider items={projects} />
       </div>
     </div>
@@ -67,7 +60,7 @@ const project_entries = getEntries(projects)
 
 <style lang="postcss">
   h3 {
-    @apply text-yellow text-4xl pb-4 font-bold;
+    @apply text-4xl pb-4 font-bold;
   }
 
   h4 {

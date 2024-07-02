@@ -2,14 +2,19 @@
 const { item } = Astro.props;
 ---
 
-<li class="MainMenuItem mr-3 last:mr-0">
-  <a href={item.url}>{item.label}</a>
+<li>
+  <a href={item.url}>
+    <i class={`text-lg nf ${item.icon} pr-1`}></i>
+    {item.label}
+  </a>
 </li>
 
-<style lang="postcss">
-.MainMenuItem {
+<style lang="tailwind">
+li {
+  @apply border-r-[1px] border-darker pr-3 mr-3 last:mr-0;
+
   a {
-    @apply relative text-cyan;
+    @apply relative text-darker;
     
     &::after {
       @apply absolute bottom-0 left-0;

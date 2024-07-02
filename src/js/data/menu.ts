@@ -1,19 +1,23 @@
 export type MenuItem = {
   label: string,
-  url: string
+  url: string,
+  icon: string
 }
 
 export const menu_data: MenuItem[] = [
   {
     'label': 'home',
-    'url': '/'
+    'url': '/',
+    'icon': 'nf-custom-home'
   },
   {
     'label': 'about',
-    'url': '/about-me'
+    'url': '/about-me',
+    'icon': 'nf-dev-terminal'
   },
   {
     'label': 'blog',
-    'url': '/blog'
+    'url': '/blog',
+    'icon': 'nf-md-keyboard'
   },
 ]

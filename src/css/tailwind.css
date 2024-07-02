@@ -5,6 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    /*@apply bg-dark-900;*/
+    @apply bg-black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-darker-600;
+  }
 }
 
 @layer components {
@@ -14,11 +22,11 @@
 @layer utilities {
   .fancy-border {
     @apply relative;
-
   }
 
   .fancy-border:after {
     @apply absolute h-[2px] w-full bg-gradient-to-r from-blue to-cyan bottom-0 left-0;
+    @apply opacity-35;
     content: ' ';
   }
 }

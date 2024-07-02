@@ -5,21 +5,20 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const { items:slides = [] } = Astro.props
-
 ---
+<script>
+import { Navigation } from 'swiper/modules';
+import Swiper from 'swiper';
 
-<script type="module" is:inline data-astro-rerun>
-import { Navigation } from '../../../node_modules/swiper/modules';
-import Swiper from '../../../node_modules/swiper';
-// import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
-
-const _slideshow = new Swiper('.swiper', {
-  modules: [Navigation],
-  navigation: {
-    enabled: true,
-    nextEl: '.justin-next',
-    prevEl: '.justin-prev',
-  }
+document.addEventListener('astro:page-load', () => {
+  const _slideshow = new Swiper('.swiper', {
+    modules: [Navigation],
+    navigation: {
+      enabled: true,
+      nextEl: '.justin-next',
+      prevEl: '.justin-prev',
+    }
+  })
 })
 </script>
 
@@ -47,21 +46,22 @@ const _slideshow = new Swiper('.swiper', {
 <style is:global>
 .swiper {
   h2 {
-    @apply text-4xl text-orange mb-4;
+    @apply text-4xl mb-4;
   }
 
   h3 {
-    @apply text-3xl text-orange lowercase italic mb-4;
+    @apply text-3xl lowercase italic mb-4;
   }
 
   p {
-    @apply text-2xl text-darker-100 mb-8;
+    @apply text-2xl mb-8;
   }
 
   .justin {
     &-next, &-prev {
-      @apply text-cyan cursor-pointer;
+      @apply cursor-pointer;
       @apply origin-center transition-all;
+      @apply text-darker;
 
       &:hover {
         @apply scale-125;

@@ -4,34 +4,35 @@ import { menu_data } from "@js/data/menu";
 ---
 
 <header>
-  <div
-    class="fancy-border container mx-auto w-11/12 lg:w-full flex flex-row justify-between items-center py-3"
-  >
+  <div class="fancy-border container mx-auto w-11/12 lg:w-full flex flex-row justify-between items-center py-3">
     <div class="text-3xl flex flex-row items-center justify-center">
       <i class="text-4xl nf nf-dev-terminal text-pink mr-2"> </i>
-      <h1>justin</h1>
+      <h1>_justin</h1>
       <span class="sr-only">Justin Paelmo, full stack developer</span>
     </div>
     <Menu items={menu_data} />
   </div>
 </header>
 
-<style lang="postcss">
-header h1 {
-  @apply relative flex flex-row items-start justify-center text-yellow -mt-1;
-}
+<style lang="tailwind">
+header {
+  h1 {
+    @apply relative flex flex-row items-start justify-center -mt-1;
+    @apply text-yellow;
 
-header h1::before, header h1::after {
-  @apply text-cyan;
-}
+    &::before, &::after {
+      @apply text-cyan;
+    }
 
-header h1::before {
-  @apply mr-1;
-  content: '{';
-}
+    &::before {
+      @apply mr-1;
+      content: '{';
+    }
 
-header h1::after {
-  @apply ml-1;
-  content: '}';
+    &::after {
+      @apply ml-1;
+      content: '}';
+    }
+  }
 }
 </style>
