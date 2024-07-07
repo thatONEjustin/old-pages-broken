@@ -16,10 +16,18 @@ const projects = projects_collection.sort((a,b) => {
 })
 
 const project_entries = getEntries(projects)
-// console.log(project_entries)
+console.log(project_entries)
 ---
 
 <BaseLayout>
+  <section>
+    <div class="container mx-auto w-11/12 lg:w-full">
+      <h3>some projects I'm working on</h3>
+      <div class="p-8 border border-buffy border-opacity-30">
+        <Slider items={projects} />
+      </div>
+    </div>
+  </section>
   <section class="lg:fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
     <div class="flex flex-col lg:flex-row w-full mx-auto px-4 lg:p-0">
       <div class="w-full lg:w-1/2 py-5 rounded-tl rounded-bl">
@@ -44,14 +52,6 @@ const project_entries = getEntries(projects)
           )}
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="container mx-auto w-11/12 lg:w-full">
-      <h3>some projects I'm working on</h3>
-      <div class="p-8 border border-buffy border-opacity-30">
-        <Slider items={projects} />
       </div>
     </div>
   </section>
