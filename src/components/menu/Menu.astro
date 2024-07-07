@@ -1,10 +1,15 @@
 ---
 import type { MenuItem as MenuItemType } from "@js/data/menu";
 import MenuItem from "@components/menu/MenuItem.astro";
+import ToggleMode from "@components/toggleMode.astro";
 
 const { items } = Astro.props;
 ---
 
-<ul class="flex flex-row">
+<ul class="flex flex-row items-start">
   {items.map((item: MenuItemType) => <MenuItem {item} />)}
+
+  <li>
+    <ToggleMode />
+  </li>
 </ul>

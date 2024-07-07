@@ -11,12 +11,11 @@ import { getCollection, getEntries } from 'astro:content'
 
 const projects_collection = await getCollection('projects')
 
-const projects = projects_collection.sort((a,b)=> {
+const projects = projects_collection.sort((a,b) => {
   return moment(a.data.date).isAfter(moment(b.data.date));
 })
 
 const project_entries = getEntries(projects)
-
 // console.log(project_entries)
 ---
 

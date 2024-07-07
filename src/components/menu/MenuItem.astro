@@ -1,9 +1,13 @@
 ---
 const { item } = Astro.props;
----
 
+const active = (url_test:string) => {
+  console.log(url_test, Astro.url.pathname)
+  return ( url_test == Astro.url.pathname ) ? 'active' : ''
+}
+---
 <li>
-  <a href={item.url}>
+  <a href={item.url} class={active(item.url)}>
     <i class={`text-lg nf ${item.icon} pr-1`}></i>
     {item.label}
   </a>
@@ -14,12 +18,28 @@ li {
   @apply border-r-[1px] border-darker pr-3 mr-3 last:mr-0;
 
   a {
-    @apply relative text-darker;
+    @apply relative text-darker-300 transition-all;
     
     &::after {
-      @apply absolute bottom-0 left-0;
+      @apply absolute -bottom-3 left-0;
       content: '';
-      @apply h-[2px] w-0 bg-darker origin-center transition-all;
+      @apply h-[2px] w-0 bg-cyan origin-center transition-all;
+    }
+
+    &:hover {
+      @apply text-cyan;
+
+      &::after {
+        @apply w-full;
+      }
+    }
+
+    &.active {
+      @apply text-green;
+
+      &::after {
+        @apply bg-green w-full;
+      }
     }
   }
 }
