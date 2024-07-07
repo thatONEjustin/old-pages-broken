@@ -6,6 +6,8 @@ import "../css/tailwind.css";
 import Header from "@layouts/header.astro";
 import Footer from "@layouts/footer.astro";
 
+import * as main from '../js/main.js';
+
 const { title = 'justin, a dev' } = Astro.props
 ---
 
@@ -33,7 +35,5 @@ const { title = 'justin, a dev' } = Astro.props
       <slot />
     </main>
     <Footer />
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </body>
 </html>

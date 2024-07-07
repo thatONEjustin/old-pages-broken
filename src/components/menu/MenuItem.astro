@@ -2,7 +2,6 @@
 const { item } = Astro.props;
 
 const active = (url_test:string) => {
-  console.log(url_test, Astro.url.pathname)
   return ( url_test == Astro.url.pathname ) ? 'active' : ''
 }
 ---
