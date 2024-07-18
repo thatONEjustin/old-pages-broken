@@ -1,0 +1,17 @@
+/*
+ * NOTE: External libraries
+ */
+@import url('https://fonts.cdnfonts.com/css/belanosima');
+@import url('https://www.nerdfonts.com/assets/css/webfont.css');
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
+/*
+ * NOTE: tailwind base finally figured out
+ */
+@import 'tailwind/tailwind.css';
+
+/*
+ * NOTE: pages/sections 
+ */
+@import 'pages/about.css';

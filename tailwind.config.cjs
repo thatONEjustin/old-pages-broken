@@ -14,6 +14,17 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       black: '#0e0d11'
+    },
+    extend: {
+      spacing: {
+        "unset": "unset",
+      },
+      maxWidth: {
+        "unset": "unset",
+      },
+      width: {
+        "unset": "unset",
+      },
     }
   },
   plugins: [

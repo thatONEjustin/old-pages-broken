@@ -28,16 +28,16 @@ console.log(project_entries)
     <div class="justin-container">
       <h2 class="text-6xl font-belanosima text-center text-cyan py-12">Hi! I'm <span class="text-yellow">justin</span>!</h1>
 
-      <div class="flex flex-row z-20 py-8">
-        <div>
+      <div class="flex flex-col md:flex-row z-20 py-8">
+        <div class="order-2 md:order-1">
           <h2 class="text-yellow border-b border-yellow">here's a short introduction</h2>
-          <p class="text-dark-600 text-3xl leading-relaxed">I'm a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /> <span class="text-cyan">web development,</span> <NerdfontIcon classes="text-light" icon="nf-dev-terminal"/> <span class="text-light">tooling,</span> <NerdfontIcon classes="text-green" icon="nf-md-git"/> <span class="text-green">CI/CD,</span> and <NerdfontIcon classes="text-orange" icon="nf-md-remote_desktop" /> <span class="text-orange">server administration</span>. I <span class="font-semibold fancy-border fancy-text">thrive</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
+          <p class="text-dark-600 text-3xl leading-relaxed">I'm a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /> <span class="text-cyan">web development,</span> <NerdfontIcon classes="text-light" icon="nf-dev-terminal"/> <span class="text-light">tooling,</span> <NerdfontIcon classes="text-green" icon="nf-md-git"/> <span class="text-green">CI/CD,</span> and <NerdfontIcon classes="text-orange" icon="nf-md-remote_desktop" /> <span class="text-orange">server administration</span>. <span class="font-semibold fancy-border fancy-text italic">I thrive</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
           <p class="text-dark-200 text-xl leading-relaxed mt-3">
             i use <NerdfontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-2 text-cyan">rch</span>btw.
           </p>
         </div>
 
-        <Image src={me} alt="Hi! I'm Justin Paelmo!" class="contrast-125 h-full w-auto rounded-full max-w-xs lg:ml-12 border border-yellow"/>
+        <Image src={me} alt="Hi! I'm Justin Paelmo!" class="order-1 md:order-2 mx-auto md:mx-unset contrast-125 h-full w-auto rounded-full max-w-xs mb-8 md:mb-0 md:ml-12 border border-yellow"/>
       </div>
 
       <div class="flex flex-row gap-x-3 pt-8 justify-center text-3xl">
@@ -62,16 +62,16 @@ console.log(project_entries)
   </section>
 -->
   <section id="about-me">
-    <div class="container mx-auto max-w-4xl relative">
+    <div class="justin-container">
       <h2 class="text-yellow">about me</h2>
 
-      <h3 class="fancy-border pb-1 mb-3">2009 - 2016</h3>
+      <h3 class="about-timeframe">2009 - 2016</h3>
       <p class="text-dark-600 text-2xl">I started web development in 2009 back in the SFTP, jQuery, and early PHP days.</p>
       <p class="text-dark-600 text-2xl">I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
       <p class="text-dark-600 text-2xl">During this time I had already picked up working in a lot of LEGACY web technologies. My first few frameworks were Wordpress and Drupal respectively. Eventually I really got a taste of backend UI development through a combination of ColdFusion/ActionScript and XML parsing.</p>
       <p class="text-dark-600 text-2xl">I built control panel UI/UX frameworks for every use case in several global scale niche hiring firms <a href={resume}>(ask me about it!)</a>.</p>
 
-      <h3 class="mt-8 pb-1 mb-3 fancy-border">2016 - now</h3>
+      <h3 class="about-timeframe mt-8">2016 - now</h3>
       <p class="text-dark-600 text-2xl">Full Remote, Front End Developer. Currently handling additional Full
 Stack Development duties from setting up hosting droplets to deploying
 CMS frameworks for clients. Mobile App development/deployment
@@ -79,67 +79,13 @@ management with both Apple and Google App Stores.</p>
     </div>
   </section>
 
-  <section id="social" class="bg-dark-700 mix-blend-multiply">
-    <div class="container mx-auto max-w-4xl relative py-10">
+  <section id="social" class="bg-dark-700 mix-blend-multiply py-8">
+    <div class="justin-container flex flex-col items-center justify-center">
       <h2 class="text-darker-50">social media</h2>
       <SocialMediaList />
     </div>
   </section>
-  <!-- 
-  <section class="lg:fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
-    <div class="flex flex-col lg:flex-row w-full mx-auto px-4 lg:p-0">
-      <div class="w-full lg:w-1/2 py-5 rounded-tl rounded-bl">
-        <h3>get to know me</h3>
-        <div class="grid grid-cols-3 gap-x-3">
-          <PillButton color="cyan" url="/about-me">more about me</PillButton>
-          <PillButton color="green" url="/resume.pdf" target="_blank">my resume</PillButton>
-          <PillButton color="pink" url="/blog">some thoughts?</PillButton>
-        </div>
-      </div>
-      <div class="lg:border-l-2 border-l-blue w-11/12 lg:w-1/2 py-5 px-2 ml-0 lg:ml-6">
-        <div class="pl-0 lg:pl-4">
-          <h3>social media</h3>
-          <ul class="flex flex-row">
-          {social_media.map((item) =>
-            <li class="mr-4 last:mr-0 text-4xl">
-              <a href={item.url} target="_blank">
-                <i class=`nf ${item.icon} ${item.classes}`></i>
-                <span class="sr-only">{item.label}</span>
-              </a>
-            </li>
-          )}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
 </BaseLayout>
 
 <style>
-#intro {
-  @apply relative;
-
-  &:before {
-    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-    @apply pointer-events-none;
-    @apply opacity-30;
-
-    content: ' ';
-    background: rgb(83,89,124);
-    background: radial-gradient(circle, rgba(83,89,124,1) 0%, rgba(14,13,17,1) 100%);
-  }
-
-  &:after {
-    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-    @apply pointer-events-none;
-
-    content: ' ';
-
-    background-size: 16px 16px;
-    background-image:
-linear-gradient(to right, rgba(248, 248, 242, 0.05) 1px, transparent 1px),
-linear-gradient(to bottom, rgba(248, 248, 242, 0.05) 1px, transparent 1px);
-  }
-}
 </style>
