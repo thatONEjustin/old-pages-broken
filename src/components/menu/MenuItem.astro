@@ -1,15 +1,24 @@
 ---
 const { item } = Astro.props;
+const { href } = item;
 
 const active = (url_test:string) => {
   return ( url_test == Astro.url.pathname ) ? 'active' : ''
 }
 ---
 <li>
-  <a href={item.url} class={active(item.url)}>
+  {item.scrollTo == null
+  ? 
+  <a {href} class={active(href)}>
     <i class={`text-lg nf ${item.icon} pr-1`}></i>
     {item.label}
   </a>
+  :
+  <a x-data={`{ id: '${item.scrollTo}', options: { behavior: 'smooth', block: 'start' }, }`} class="cursor-pointer" @click="document.getElementById(id).scrollIntoView(options)">
+    <i class={`text-lg nf ${item.icon} pr-1`}></i>
+    {item.label}
+  </a>
+  }
 </li>
 
 <style lang="tailwind">

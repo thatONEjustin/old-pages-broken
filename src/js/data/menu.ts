@@ -1,23 +1,25 @@
 export type MenuItem = {
   label: string,
-  url: string,
-  icon: string
+  href: string,
+  icon: string,
+  scrollTo?: string
 }
 
 export const menu_data: MenuItem[] = [
   {
     'label': 'home',
-    'url': '/',
+    'href': '/',
     'icon': 'nf-custom-home'
   },
   {
     'label': 'about',
-    'url': '#about-me',
-    'icon': 'nf-dev-terminal '
+    'href': '#',
+    'icon': 'nf-dev-terminal',
+    'scrollTo': 'about-me'
   },
   {
     'label': 'blog',
-    'url': '/blog',
+    'href': '/blog',
     'icon': 'nf-md-keyboard'
   },
 ]
