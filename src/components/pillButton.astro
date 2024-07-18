@@ -9,6 +9,7 @@ const { url = "#", target, color = "default", classes = "" } = Astro.props;
 <style lang="postcss">
 a {
   @apply px-3 py-2 rounded-sm text-center text-darker font-bold bg-transparent border-b-2 transition-all;
+  @apply min-w-[140px];
 
   &.default {
     @apply border-darker text-darker;
