@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/belanosima');
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @tailwind base;
@@ -20,6 +21,14 @@
 
   p {
     @apply text-darker-600;
+
+    + p {
+      @apply mb-8;
+
+      &:last-of-type {
+        @apply mb-0;
+      }
+    }
   }
 }
 

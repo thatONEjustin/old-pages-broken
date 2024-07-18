@@ -16,6 +16,9 @@
       "@js/*": [
         "src/js/*"
       ],
+      "@img/*": [
+        "src/img/*"
+      ],
       "@node/*": [
         "node_modules/*"
       ]

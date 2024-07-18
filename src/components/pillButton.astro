@@ -1,8 +1,8 @@
 ---
-const { url = "#", target, color = "default" } = Astro.props;
+const { url = "#", target, color = "default", classes = "" } = Astro.props;
 ---
 
-<a class={`${color}`} href={url} {target}>
+<a class={`${color} ${classes}`} href={url} {target}>
   <slot>Button Text</slot>
 </a>
 

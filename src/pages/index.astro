@@ -3,6 +3,7 @@ import moment from "moment";
 
 import BaseLayout from "@layouts/base.astro";
 import PillButton from "@components/pillButton.astro";
+import NerdfontIcon from "@components/nerdfont-icon.astro";
 
 import Slider from "@components/slider/Slider.astro";
 import { social_media } from "@js/data/social";
@@ -21,6 +22,24 @@ console.log(project_entries)
 
 <BaseLayout>
   <section>
+    <div class="container mx-auto max-w-4xl relative">
+      <h1 class="text-5xl font-belanosima text-center text-cyan pt-14 pb-8">Hi! I'm <span class="text-yellow">justin</span>!</h1>
+
+      <h3>about me</h3>
+      <p class="text-dark-200 text-3xl">I'm a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /> <span class="text-cyan">web development</span>, <NerdfontIcon classes="text-light" icon="nf-dev-terminal"/> <span class="text-light">tooling</span>, <NerdfontIcon classes="text-green" icon="nf-md-git"/> <span class="text-green">CI/CD</span>, and <NerdfontIcon classes="text-pink" icon="nf-md-remote_desktop" /> <span class="text-pink">systems administration</span>. I thrive when working with tight knit teams on finding elegant solutions for as many problems as possible.</p>
+
+      <div class="grid grid-cols-2 gap-x-3 pt-8">
+        <PillButton color="green" url="/resume.pdf" target="_blank">
+          <NerdfontIcon icon="nf-md-file_document" /> my resume
+        </PillButton>
+        <PillButton color="cyan" url="/blog">
+          <NerdfontIcon icon="nf-md-pen" /> blog
+        </PillButton>
+      </div>
+    </div>
+  </section>
+  <!--
+  <section>
     <div class="container mx-auto w-11/12 lg:w-full">
       <h3>some projects I'm working on</h3>
       <div class="p-8 border border-buffy border-opacity-30">
@@ -28,12 +47,16 @@ console.log(project_entries)
       </div>
     </div>
   </section>
+-->
+  <section>
+  </section>
+  <!-- 
   <section class="lg:fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
     <div class="flex flex-col lg:flex-row w-full mx-auto px-4 lg:p-0">
       <div class="w-full lg:w-1/2 py-5 rounded-tl rounded-bl">
         <h3>get to know me</h3>
         <div class="grid grid-cols-3 gap-x-3">
-          <PillButton color="cyan" url="/about-me">a bit about me</PillButton>
+          <PillButton color="cyan" url="/about-me">more about me</PillButton>
           <PillButton color="green" url="/resume.pdf" target="_blank">my resume</PillButton>
           <PillButton color="pink" url="/blog">some thoughts?</PillButton>
         </div>
@@ -55,6 +78,7 @@ console.log(project_entries)
       </div>
     </div>
   </section>
+  -->
 </BaseLayout>
 
 <style lang="postcss">
