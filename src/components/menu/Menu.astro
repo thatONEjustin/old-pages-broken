@@ -6,10 +6,12 @@ import ToggleMode from "@components/toggleMode.astro";
 const { items } = Astro.props;
 ---
 
-<ul class="flex flex-row items-start">
+<ul class="flex flex-row items-start py-4 md:py-0">
   {items.map((item: MenuItemType) => <MenuItem {item} />)}
 
+  <!--
   <li>
     <ToggleMode />
   </li>
+  -->
 </ul>

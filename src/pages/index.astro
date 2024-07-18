@@ -1,12 +1,15 @@
 ---
 import moment from "moment";
 
+import { Image } from "astro:assets"
+
 import BaseLayout from "@layouts/base.astro";
 import PillButton from "@components/pillButton.astro";
 import NerdfontIcon from "@components/nerdfont-icon.astro";
+import SocialMediaList from "@components/social-media-list.astro";
 
-import Slider from "@components/slider/Slider.astro";
-import { social_media } from "@js/data/social";
+import resume from "public/resume.pdf"
+import me from "../img/me.jpeg"
 
 import { getCollection, getEntries } from 'astro:content'
 
@@ -21,14 +24,20 @@ console.log(project_entries)
 ---
 
 <BaseLayout>
-  <section>
-    <div class="container mx-auto max-w-4xl relative">
-      <h1 class="text-5xl font-belanosima text-center text-cyan pt-14 pb-8">Hi! I'm <span class="text-yellow">justin</span>!</h1>
+  <section id="intro" class="py-10 relative border-b border-b-purple border-opacity-10 overflow-hidden">
+    <div class="justin-container">
+      <h2 class="text-6xl font-belanosima text-center text-cyan py-12">Hi! I'm <span class="text-yellow">justin</span>!</h1>
 
-      <h3>about me</h3>
-      <p class="text-dark-200 text-3xl">I'm a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /> <span class="text-cyan">web development</span>, <NerdfontIcon classes="text-light" icon="nf-dev-terminal"/> <span class="text-light">tooling</span>, <NerdfontIcon classes="text-green" icon="nf-md-git"/> <span class="text-green">CI/CD</span>, and <NerdfontIcon classes="text-pink" icon="nf-md-remote_desktop" /> <span class="text-pink">systems administration</span>. I thrive when working with tight knit teams on finding elegant solutions for as many problems as possible.</p>
+      <div class="flex flex-row z-20">
+        <div>
+          <h2 class="text-yellow border-b border-yellow">here's a short introduction</h2>
+          <p class="text-dark-600 text-3xl leading-relaxed">I'm a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /> <span class="text-cyan">web development,</span> <NerdfontIcon classes="text-light" icon="nf-dev-terminal"/> <span class="text-light">tooling,</span> <NerdfontIcon classes="text-green" icon="nf-md-git"/> <span class="text-green">CI/CD,</span> and <NerdfontIcon classes="text-pink" icon="nf-md-remote_desktop" /> <span class="text-pink">systems administration</span>. I <span class="font-semibold fancy-border fancy-text">thrive</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
+        </div>
 
-      <div class="grid grid-cols-2 gap-x-3 pt-8">
+        <Image src={me} alt="Hi! I'm Justin Paelmo!" class="contrast-125 h-full w-auto rounded-full max-w-xs lg:ml-12 border border-yellow"/>
+      </div>
+
+      <div class="flex flex-row gap-x-3 pt-8 justify-center text-2xl">
         <PillButton color="green" url="/resume.pdf" target="_blank">
           <NerdfontIcon icon="nf-md-file_document" /> my resume
         </PillButton>
@@ -37,6 +46,7 @@ console.log(project_entries)
         </PillButton>
       </div>
     </div>
+
   </section>
   <!--
   <section>
@@ -48,7 +58,29 @@ console.log(project_entries)
     </div>
   </section>
 -->
-  <section>
+  <section id="about-me">
+    <div class="container mx-auto max-w-4xl relative">
+      <h2 class="text-yellow">about me</h2>
+
+      <h3 class="fancy-border pb-1 mb-3">2009 - 2016</h3>
+      <p class="text-dark-600 text-2xl">I started web development in 2009 back in the SFTP, jQuery, and early PHP days.</p>
+      <p class="text-dark-600 text-2xl">I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
+      <p class="text-dark-600 text-2xl">During this time I had already picked up working in a lot of LEGACY web technologies. My first few frameworks were Wordpress and Drupal respectively. Eventually I really got a taste of backend UI development through a combination of ColdFusion/ActionScript and XML parsing.</p>
+      <p class="text-dark-600 text-2xl">I built control panel UI/UX frameworks for every use case in several global scale niche hiring firms <a href={resume}>(ask me about it!)</a>.</p>
+
+      <h3 class="mt-8 pb-1 mb-3 fancy-border">2016 - now</h3>
+      <p class="text-dark-600 text-2xl">Full Remote, Front End Developer. Currently handling additional Full
+Stack Development duties from setting up hosting droplets to deploying
+CMS frameworks for clients. Mobile App development/deployment
+management with both Apple and Google App Stores.</p>
+    </div>
+  </section>
+
+  <section id="social" class="bg-dark-700 mix-blend-multiply">
+    <div class="container mx-auto max-w-4xl relative py-10">
+      <h2 class="text-darker-50">social media</h2>
+      <SocialMediaList />
+    </div>
   </section>
   <!-- 
   <section class="lg:fancy-border container py-4 mb-4 mx-auto w-full flex flex-col items-center">
@@ -81,12 +113,30 @@ console.log(project_entries)
   -->
 </BaseLayout>
 
-<style lang="postcss">
-  h3 {
-    @apply text-4xl pb-4 font-bold;
+<style>
+#intro {
+  @apply relative;
+
+  &:before {
+    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+    @apply pointer-events-none;
+    @apply opacity-30;
+
+    content: ' ';
+    background: rgb(83,89,124);
+    background: radial-gradient(circle, rgba(83,89,124,1) 0%, rgba(14,13,17,1) 100%);
   }
 
-  h4 {
-    @apply text-light-400 font-bold;
+  &:after {
+    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+    @apply pointer-events-none;
+
+    content: ' ';
+
+    background-size: 16px 16px;
+    background-image:
+linear-gradient(to right, rgba(248, 248, 242, 0.05) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(248, 248, 242, 0.05) 1px, transparent 1px);
   }
+}
 </style>

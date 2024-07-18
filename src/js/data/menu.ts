@@ -12,8 +12,8 @@ export const menu_data: MenuItem[] = [
   },
   {
     'label': 'about',
-    'url': '/about-me',
-    'icon': 'nf-dev-terminal'
+    'url': '#about-me',
+    'icon': 'nf-dev-terminal '
   },
   {
     'label': 'blog',
