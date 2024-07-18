@@ -34,7 +34,7 @@ const tech_stacks = [
             {technology.tagline != "" && (
               <span class="font-normal text-yellow">{technology.tagline}</span>
             )}
-            <a href={technology.url} target="_blank" class=`${technology.text_color} font-semibold`>
+            <a href={technology.url} target="_blank" class=`${technology.text_color} font-semibold no-underline`>
               {technology.icon && <i class=`nf ${technology.icon} ${technology.text_color}`> </i>}
               {technology.label}
             </a>

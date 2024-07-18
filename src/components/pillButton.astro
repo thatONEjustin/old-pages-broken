@@ -10,6 +10,7 @@ const { url = "#", target, color = "default", classes = "" } = Astro.props;
 a {
   @apply px-3 py-2 rounded-sm text-center text-darker font-bold bg-transparent border-b-2 transition-all;
   @apply min-w-[140px];
+  @apply no-underline;
 
   &.default {
     @apply border-darker text-darker;
