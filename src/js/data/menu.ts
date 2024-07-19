@@ -11,12 +11,12 @@ export const menu_data: MenuItem[] = [
     'href': '/',
     'icon': 'nf-custom-home'
   },
-  // {
-  //   'label': 'about',
-  //   'href': '#',
-  //   'icon': 'nf-dev-terminal',
-  //   'scrollTo': 'about-me'
-  // },
+  {
+    'label': 'about',
+    'href': '#',
+    'icon': 'nf-dev-terminal',
+    'scrollTo': 'about-me'
+  },
   // {
   //   'label': 'blog',
   //   'href': '/blog',
