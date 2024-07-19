@@ -4,11 +4,11 @@ import { menu_data } from "@js/data/menu";
 ---
 
 <header class="fancy-border ">
-  <div class="container mx-auto w-11/12 md:w-full flex flex-col md:flex-row justify-between items-start md:items-center py-3">
+  <div class="container mx-auto w-11/12 md:w-full flex flex-col sm:flex-row justify-between items-center py-3">
     <a href="/" class="text-3xl flex no-underline">
-      <i class="hidden md:block text-4xl nf nf-dev-terminal text-pink mr-2"> </i>
-      <h1>justin,&nbsp;<div class="text-cullen-300">full stack developer</div></h1>
-      <span class="sr-only">Justin Paelmo, full stack developer</span>
+      <i class="text-3xl sm:text-4xl nf nf-dev-terminal text-pink mr-2"> </i>
+      <h1>i'm justin&nbsp;<div class="text-cullen-300 min-w-fit">a full stack developer</div></h1>
+      <span class="sr-only">I'm Justin Paelmo, full stack developer</span>
     </a>
     <Menu items={menu_data} />
   </div>
@@ -17,10 +17,19 @@ import { menu_data } from "@js/data/menu";
 <style lang="tailwind">
 header {
   h1 {
-    @apply relative flex flex-col items-start justify-center -mt-1 text-4xl;
+    @apply relative items-start justify-center -mt-1 text-2xl;
     @apply text-yellow;
+    @apply transition-all;
 
     @screen sm {
+      @apply flex text-3xl flex-col;
+    }
+
+    @screen md {
+      @apply text-4xl;
+    }
+
+    @screen xl {
       @apply flex-row;
     }
   }

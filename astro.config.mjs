@@ -8,8 +8,14 @@ import alpinejs from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://thatonejustin.github.io',
-  integrations: [tailwind({
-    applyBaseStyles: false,
-    nesting: true
-  }), mdx(), alpinejs({ entrypoint: '/src/js/main' })]
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+      nesting: true
+    }),
+    mdx(),
+    alpinejs({
+      entrypoint: '/src/js/main'
+    })
+  ]
 });
