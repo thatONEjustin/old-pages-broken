@@ -4,7 +4,7 @@ import moment from "moment";
 import { Image } from "astro:assets"
 
 import BaseLayout from "@layouts/base.astro";
-import PillButton from "@components/pillButton.astro";
+import PillButton from "@components/pill-button.astro";
 import NerdfontIcon from "@components/nerdfont-icon.astro";
 import SocialMediaList from "@components/social-media-list.astro";
 
@@ -63,19 +63,30 @@ import { getCollection, getEntries } from 'astro:content'
 -->
   <section id="about-me">
     <div class="justin-container">
-      <h2 class="text-yellow">about me</h2>
+      <h2 class="text-yellow">about me / work history</h2>
 
-      <h3 class="about-timeframe">2009 - 2016</h3>
-      <p class="text-dark-600 text-2xl">I started web development in 2009 back in the SFTP, jQuery, and early PHP days.</p>
-      <p class="text-dark-600 text-2xl">I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
-      <p class="text-dark-600 text-2xl">During this time I had already picked up working in a lot of LEGACY web technologies. My first few frameworks were Wordpress and Drupal respectively. Eventually I really got a taste of backend UI development through a combination of ColdFusion/ActionScript and XML parsing.</p>
-      <p class="text-dark-600 text-2xl">I built control panel UI/UX frameworks for every use case in several global scale niche hiring firms <a href={resume}>(ask me about it!)</a>.</p>
+      <div class="flex flex-row items-center justify-between about-timeframe">
+        <h3 class="text-pink">2009 - 2016</h3>
+        <h4 class="text-cyan">AdvantageServices</h3>
+      </div>
 
-      <h3 class="about-timeframe mt-8">2016 - now</h3>
-      <p class="text-dark-600 text-2xl">Full Remote, Front End Developer. Currently handling additional Full
-Stack Development duties from setting up hosting droplets to deploying
-CMS frameworks for clients. Mobile App development/deployment
-management with both Apple and Google App Stores.</p>
+      <p>I started professional web development in 2009 back in the SFTP, jQuery, and early PHP days.</p>
+      <p>I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
+      <p>During this time I had already picked up working in a lot of LEGACY web technologies. My first few frameworks were Wordpress and Drupal respectively. Eventually I really got a taste of backend UI development through a combination of ColdFusion/ActionScript and XML parsing.</p>
+      <p>I built control panel UI/UX frameworks for every use case in several global scale niche hiring firms <a href={resume}>(ask me about it!)</a>.</p>
+
+      <div class="flex flex-row items-center justify-between about-timeframe mt-8">
+        <h3 class="text-pink">2016 - now</h3>
+        <h4 class="text-cyan">WojoDesign</h3>
+      </div>
+
+      <p>This was a big move for me both in going from Florida to Chicago, and finally moving towards more modern tech stacks in web development.</p>
+      <p>I wrote my first JS to mobile application for a client, that involved allowing users to purchase native in-app subscriptions for both the apple AppStore and google's Play Store.</p>
+      <p>About 2016 - 2018 was a lot of me learning tools like yarn, npm, node, liquid/handlebars. I also started delving into more backend CMS development.</p>
+      <p>This was also the time period where I really leaned into more systems administration and automation workflows.</p>
+      <p>From 2018 onwards I put a bigger focus on deepening my relationship with programming and web development.</p>
+      <p>I continue to build and/or integrate user management systems and login front ends. I also developed a few internal plugins for the Craft CMS platform.</p>
+      <p>I've been incorporating more and more workflows that involve CI/CD practices for code deployment and environment management.</p>
     </div>
   </section>
 
@@ -88,4 +99,11 @@ management with both Apple and Google App Stores.</p>
 </BaseLayout>
 
 <style>
+#about-me {
+  .justin-container {
+    p {
+      @apply text-dark-600 text-2xl;
+    }
+  }
+}
 </style>
