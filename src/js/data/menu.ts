@@ -11,15 +11,15 @@ export const menu_data: MenuItem[] = [
     'href': '/',
     'icon': 'nf-custom-home'
   },
-  {
-    'label': 'about',
-    'href': '#',
-    'icon': 'nf-dev-terminal',
-    'scrollTo': 'about-me'
-  },
-  {
-    'label': 'blog',
-    'href': '/blog',
-    'icon': 'nf-md-keyboard'
-  },
+  // {
+  //   'label': 'about',
+  //   'href': '#',
+  //   'icon': 'nf-dev-terminal',
+  //   'scrollTo': 'about-me'
+  // },
+  // {
+  //   'label': 'blog',
+  //   'href': '/blog',
+  //   'icon': 'nf-md-keyboard'
+  // },
 ]
