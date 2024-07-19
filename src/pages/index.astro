@@ -40,8 +40,8 @@ import { getCollection, getEntries } from 'astro:content'
         <Image src={me} alt="Hi! I'm Justin Paelmo!" class="order-1 md:order-2 mx-auto md:mx-unset contrast-125 h-full w-auto rounded-full max-w-xs mb-8 md:mb-0 md:ml-12 border border-yellow"/>
       </div>
 
-      <div class="flex flex-row gap-x-3 pt-8 justify-center text-xl md:text-2xl lg:text-3xl">
-        <PillButton color="green" url="/resume.pdf" target="_blank">
+      <div class="flex flex-row gap-x-3 pt-8 justify-center text-xl">
+        <PillButton class="text-3xl green" url="/resume.pdf" target="_blank">
           <NerdfontIcon icon="nf-md-file_document" /> resume
         </PillButton>
         <!-- <PillButton color="cyan" url="/blog"> -->
@@ -63,7 +63,7 @@ import { getCollection, getEntries } from 'astro:content'
 -->
   <section id="about-me">
     <div class="justin-container">
-      <h2 class="text-yellow">about me / work history</h2>
+      <h2 class="text-yellow">about me &amp; work history</h2>
 
       <div class="flex flex-row items-center justify-between about-timeframe">
         <h3 class="text-pink">2009 - 2016</h3>
