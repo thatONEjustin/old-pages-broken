@@ -29,7 +29,7 @@
   }
 
   p {
-    @apply text-darker-600;
+    @apply text-darker-100;
 
     + p {
       @apply mb-8;
