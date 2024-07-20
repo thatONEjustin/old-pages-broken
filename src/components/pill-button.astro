@@ -8,12 +8,48 @@ const { url = "#", target, class:className  } = Astro.props;
 
 <style lang="postcss">
 a {
-  @apply px-3 py-2 rounded-sm text-center text-darker font-bold bg-transparent border-b-2 transition-all;
+  @apply relative;
+  @apply px-8 py-4 text-center text-darker font-bold transition-all;
   @apply min-w-[140px];
   @apply no-underline;
 
+  &:after {
+    @apply absolute bottom-0 left-0 w-full h-[2px] transition-all;
+    @apply -z-10;
+    transform-origin: bottom center;
+    content: ' ';
+
+    animation: grow-out 175ms ease-out forwards;
+  }
+
+  @keyframes grow-in {
+    from {
+      @apply h-[2px];
+    }
+    to {
+      @apply h-full rounded-md;
+    }
+  }
+
+  @keyframes grow-out {
+    from {
+      @apply h-full;
+    }
+    to {
+      @apply h-[2px];
+    }
+  }
+
+  &:hover {
+    @apply rounded-lg;
+
+    &:after {
+      animation: grow-in 175ms ease-in forwards;
+    }
+  }
+
   &.default {
-    @apply border-darker text-darker;
+    @apply text-darker;
 
     &:hover {
       @apply border-transparent text-light bg-darker;
@@ -21,42 +57,62 @@ a {
   }
 
   &.green {
-    @apply border-green text-green;
+    @apply text-green;
+
+    &:after {
+      @apply bg-green;
+    }
 
     &:hover {
-      @apply border-transparent text-darker bg-green;
+      @apply text-darker;
     }
   }
 
   &.cyan {
-    @apply border-cyan text-cyan;
+    @apply text-cyan;
+
+    &:after {
+      @apply bg-cyan;
+    }
 
     &:hover {
-      @apply border-transparent text-darker bg-cyan;
+      @apply text-darker bg-cyan;
     }
   }
 
   &.pink {
-    @apply border-pink text-pink;
+    @apply text-pink;
+
+    &:after {
+      @apply bg-pink;
+    }
 
     &:hover {
-      @apply border-transparent text-darker bg-pink;
+      @apply text-darker bg-pink;
     }
   }
 
   &.purple {
-    @apply border-purple text-purple;
+    @apply text-purple;
+
+    &:after {
+      @apply bg-purple;
+    }
 
     &:hover {
-      @apply border-transparent text-darker bg-purple;
+      @apply text-darker bg-purple;
     }
   }
 
   &.yellow {
-    @apply border-yellow text-yellow;
+    @apply text-yellow;
+
+    &:after {
+      @apply bg-yellow;
+    }
 
     &:hover {
-      @apply border-transparent text-darker bg-yellow;
+      @apply text-darker bg-yellow;
     }
   }
 }

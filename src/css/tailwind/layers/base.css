@@ -46,7 +46,7 @@
 
   section {
     + section {
-      @apply my-20;
+      @apply py-20;
 
       &:last-of-type {
         @apply mb-8;
