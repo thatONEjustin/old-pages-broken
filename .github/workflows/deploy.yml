@@ -1,5 +1,7 @@
 name: Deploy to GitHub Pages
 
+env:
+  ASTRO_STUDIO_APP_TOKEN: ${{secrets.ASTRO_STUDIO_APP_TOKEN }}
 
 on:
   # Trigger the workflow every time you push to the `main` branch
