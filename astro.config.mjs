@@ -18,6 +18,6 @@ export default defineConfig({
     alpinejs({
       entrypoint: '/src/js/main'
     }),
-    db()
+    // db()
   ]
 });
