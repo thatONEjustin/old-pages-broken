@@ -1,0 +1,54 @@
+---
+type Skill = {
+  label: string,
+  icon: string,
+  experience: {
+    years: number,
+    moreThan: boolean
+  },
+  categories: Array<string>
+}
+
+const skills: Array<Skill> = [
+  {
+    label: 'javascript (vanilla)',
+    icon: 'nf-dev-javascript_badge',
+    experience: {
+      years: 20,
+      moreThan: true
+    },
+    categories: [
+      'all',
+      'front-end',
+      'back-end'
+    ]
+  },
+  {
+    label: 'bootstrap',
+    icon: 'nf-md-bootstrap',
+    experience: {
+      years: 10,
+      moreThan: true
+    },
+    categories: [
+      'front-end',
+    ]
+  },
+]
+const skill_categories = [... new Set(skills.map((skill:Skill, _index) => skill.categories).flat(1))]
+console.log(skill_categories)
+---
+<div x-data="{ active: 'all' }">
+  <ul class="flex flex-row text-2xl font-semibold min-w-min max-w-fit mx-auto bg-darker-600 py-5 px-6 rounded-lg">
+    {skill_categories.map((skillset) => (
+    <li
+      class="mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all" 
+      :class=`active == '${skillset}' && 'fancy-border fancy-text'`
+      @click=`active = ${skillset}`
+      >
+        {skillset}
+      </li>
+    ))}
+  </ul>
+
+</div>
