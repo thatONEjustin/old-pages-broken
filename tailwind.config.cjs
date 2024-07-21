@@ -9,6 +9,7 @@ module.exports = {
       // 'serif': ['"Delicious Handrawn"', 'serif'],
       // 'nabla': ['Nabla', '"Delicious Handrawn"', 'sans-serif'],
       // 'caveat': ['Caveat', 'serif']
+      'nf-symbols': ['Symbols Nerd Font'],
       'belanosima': ['belanosima', 'serif']
     },
     colors: {

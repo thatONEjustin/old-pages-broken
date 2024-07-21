@@ -1,0 +1,99 @@
+---
+import SwiperSlide from '@components/slider/Slide.astro'
+import SkillBar from './skill-bar.astro'
+
+type Skill = {
+  label: string,
+  icon: string,
+  experience: {
+    years: number,
+    moreThan: boolean
+  },
+  categories: Array<string>
+}
+
+const skills: Array<Skill> = [
+  {
+    label: 'javascript (vanilla)',
+    icon: 'nf-dev-javascript_badge text-yellow',
+    experience: {
+      years: 20,
+      moreThan: true
+    },
+    categories: [
+      'all',
+      'front-end',
+      'back-end'
+    ]
+  },
+  {
+    label: 'bootstrap',
+    icon: 'nf-md-bootstrap text-cyan',
+    experience: {
+      years: 10,
+      moreThan: true
+    },
+    categories: [
+      'front-end',
+    ]
+  },
+  {
+    label: 'php',
+    icon: 'nf-md-language_php text-purple',
+    experience: {
+      years: 15,
+      moreThan: true
+    },
+    categories: [
+      'back-end',
+    ]
+  },
+]
+const max_years = 25
+const skill_categories = [... new Set(skills.map((skill:Skill) => skill.categories.find((item) => (item  != 'all'))).flat(1))]
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+---
+<script>
+import Swiper from 'swiper';
+
+document.addEventListener('astro:page-load', () => {
+  const slideshow = new Swiper('.skill-swiper', {
+    navigation: {
+      enabled: false,
+    },
+    centeredSlides: true,
+    centeredSlidesBounds: true
+  })
+
+  const buttons = document.getElementsByClassName('skillset-button')
+
+  for(var button of buttons) {
+    button.addEventListener('click', function () {
+      slideshow.slideTo(this.id)
+    })
+  }
+})
+</script>
+<div>
+  <ul class="flex flex-row text-2xl font-semibold min-w-min max-w-fit mx-auto bg-darker-600 py-5 px-6 rounded-lg">
+    {skill_categories.map((skillset, index) => (
+    <li class="mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all skillset-button" id=`${index}`>
+      {skillset}
+    </li>
+    ))}
+  </ul>
+  <div class="skill-swiper overflow-hidden">
+    <div class="swiper-wrapper">
+      {skill_categories.map((skillset) => (  
+      <SwiperSlide id=`${skillset}`>
+        <h3 class="text-orange pb-1 mb-2 border-b border-yellow">{skillset}</h3> 
+        {skills.filter(skill => skill.categories.find((item) => item === skillset)).map(( displaySkill:Skill ) => (
+          <SkillBar skill={displaySkill} />
+        ))}
+      </SwiperSlide>
+      ))}
+    </div>
+  </div>
+</div>
