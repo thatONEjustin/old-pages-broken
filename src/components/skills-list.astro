@@ -34,20 +34,52 @@ const skills: Array<Skill> = [
       'front-end',
     ]
   },
+  {
+    label: 'php',
+    icon: 'nf-md-language_php',
+    experience: {
+      years: 15,
+      moreThan: true
+    },
+    categories: [
+      'back-end',
+    ]
+  },
 ]
-const skill_categories = [... new Set(skills.map((skill:Skill, _index) => skill.categories).flat(1))]
-console.log(skill_categories)
+const skill_categories = [... new Set(skills.map((skill:Skill) => skill.categories.find((item) => (item  != 'all'))).flat(1))]
+
+// console.log(skill_categories) be
+// const front_end = skills.filter(skill => skill.categories.find((item) => item === 'front-end' || item === 'all'))
+// const back_end = skills.filter(skill => skill.categories.find((item) => item === 'back-end' || item === 'all'))
+
+// const { items:slides = [] } = Astro.props
+import SkillSlider from '@components/skill-slider.astro'
 ---
-<div x-data="{ active: 'all' }">
+
+<div>
   <ul class="flex flex-row text-2xl font-semibold min-w-min max-w-fit mx-auto bg-darker-600 py-5 px-6 rounded-lg">
-    {skill_categories.map((skillset) => (
-    <li
-      class="mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all" 
-      :class=`active == '${skillset}' && 'fancy-border fancy-text'`
-      @click=`active = ${skillset}`
-      >
-        {skillset}
-      </li>
+    {skill_categories.map((skillset, index) => (
+    <li class="mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all skillset-button" id={index}>
+      {skillset}
+    </li>
     ))}
   </ul>
+  <div class="skill-swiper">
+    <!--
+    {skill_categories.map((skillset) => (  
+    <SwiperSlide id=`${skillset}`>
+      <h3>{skillset}</h3> 
+      {skills.filter(skill => skill.categories.find((item) => item === skillset)).map(( displaySkill:Skill ) => (
+        <div class="text-light">
+          <div class="flex flex-row items-center justify-start">
+            <i class={`nf ${displaySkill.icon}`}></i>
+            <h4>{displaySkill.label}</h4>
+          </div>
+          <div class="h-1 bg-cyan" style=`width: ${(displaySkill.experience.years / max_years) * 100}%;`></div>
+        </div>
+      ))}
+    </SwiperSlide>
+    ))}
+    -->
+  </div>
 </div>
