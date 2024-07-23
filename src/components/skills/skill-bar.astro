@@ -1,18 +1,16 @@
 ---
-const { skill } = Astro.props
+const { icon, color, experience, label } = Astro.props.skill
 const max_years = 25
 ---
-<div class="my-3 pb-2 pl-1">
-  <div class="flex flex-row items-between">
-    <div class="flex flex-row items-center justify-start">
-      <i class={`nf text-4xl mr-2 ${skill.icon}`}></i>
-      <h4 class="text-xl">{skill.label}</h4>
-    </div>
+<div class=`skill-bar ${color}`>
+  <div class="skill-bar-label">
+    <i class={`skill-bar-icon ${icon}`}></i>
+    <h4 class=`text-xl`>{label}</h4>
   </div>
   <div class="flex flex-row items-center">
-    <div class="bg-cyan text-right skillbar pr-1 min-w-fit" style=`width: ${(skill.experience.years / max_years) * 100}%;`>
-      <p class="text-dark text-sm px-1 min-w-fit">{skill.experience.years}{skill.experience.moreThan && '+'} years</p>
+    <div class=`skill-bar-bar` style=`width: ${(experience.years / max_years) * 100}%;`>
+      <p class=`skill-bar-experience`>{experience.years}{experience.moreThan && '+'} years</p>
     </div>
-    <span class="skillbar-endcap nf nf-ple-pixelated_squares_big text-cyan"></span>
+    <span class="skill-bar-endcap"></span>
   </div>
 </div>

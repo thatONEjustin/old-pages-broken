@@ -5,6 +5,7 @@ import SkillBar from './skill-bar.astro'
 type Skill = {
   label: string,
   icon: string,
+  color: string,
   experience: {
     years: number,
     moreThan: boolean
@@ -15,7 +16,8 @@ type Skill = {
 const skills: Array<Skill> = [
   {
     label: 'javascript (vanilla)',
-    icon: 'nf-dev-javascript_badge text-yellow',
+    icon: 'nf-dev-javascript_badge ',
+    color: 'yellow',
     experience: {
       years: 20,
       moreThan: true
@@ -28,7 +30,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'bootstrap',
-    icon: 'nf-md-bootstrap text-cyan',
+    icon: 'nf-md-bootstrap ',
+    color: 'cyan',
     experience: {
       years: 10,
       moreThan: true
@@ -39,7 +42,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'php',
-    icon: 'nf-md-language_php text-purple',
+    icon: 'nf-md-language_php',
+    color: 'purple',
     experience: {
       years: 15,
       moreThan: true
@@ -50,7 +54,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'css',
-    icon: 'nf-dev-css3 text-blue',
+    icon: 'nf-dev-css3',
+    color: 'blue',
     experience: {
       years: 15, 
       moreThan: true
@@ -61,7 +66,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'twig',
-    icon: 'nf-seti-twig text-green',
+    icon: 'nf-seti-twig',
+    color: 'green',
     experience: {
       years: 6, 
       moreThan: false
@@ -72,7 +78,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'laravel',
-    icon: 'nf-seti-twig text-red',
+    icon: 'nf-fa-laravel',
+    color: 'red',
     experience: {
       years: 3, 
       moreThan: false
@@ -84,7 +91,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'bash',
-    icon: 'nf-md-bash text-green',
+    icon: 'nf-md-bash',
+    color: 'green',
     experience: {
       years: 3, 
       moreThan: false
@@ -95,7 +103,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'TypeScript',
-    icon: 'nf-md-language_typescript text-blue',
+    icon: 'nf-md-language_typescript',
+    color: 'yellow',
     experience: {
       years: 4,
       moreThan: true
@@ -107,7 +116,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'sass',
-    icon: 'nf-dev-sass text-pink',
+    icon: 'nf-dev-sass',
+    color: 'pink',
     experience: {
       years: 5,
       moreThan: true
@@ -118,7 +128,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'lua',
-    icon: 'nf-md-language_lua text-pink',
+    icon: 'nf-md-language_lua',
+    color: 'pink',
     experience: {
       years: 3,
       moreThan: true
@@ -129,7 +140,8 @@ const skills: Array<Skill> = [
   },
   {
     label: 'rust',
-    icon: 'nf-md-language_lua text-red',
+    icon: 'nf-md-language_lua',
+    color: 'red',
     experience: {
       years: 1,
       moreThan: false
@@ -146,40 +158,35 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 ---
 <script>
-import Swiper from 'swiper';
+  import Swiper from 'swiper';
 
-document.addEventListener('astro:page-load', () => {
-  const slideshow = new Swiper('.skill-swiper', {
-    navigation: {
-      enabled: false,
-    },
-    centeredSlides: true,
-    centeredSlidesBounds: true
-  })
-
-  const buttons = document.getElementsByClassName('skills-list-category')
-
-  buttons[0].classList.add('active')
-
-  for(var button of buttons) {
-    button.addEventListener('click', function () {
-      slideTo(this)
+  document.addEventListener('astro:page-load', () => {
+    const slideshow = new Swiper('.skill-swiper', {
+      navigation: {
+        enabled: false,
+      },
+      centeredSlides: true,
+      centeredSlidesBounds: true
     })
-  }
 
-  const cleaner = () => {
+    const buttons = document.getElementsByClassName('skills-list-category')
+
+    buttons[0].classList.add('active')
+
     for(var button of buttons) {
-      button.classList.remove('active')
+      button.addEventListener('click', function () {
+        slideTo(this)
+      })
     }
-  }
 
-  const slideTo = (item:Element) => {
-    cleaner()
-    item.classList.add('active')
-    slideshow.slideTo(item.id)
-  }
-})
+    const slideTo = (item:Element) => {
+      for(var button of buttons) {
+        button.classList.toggle('active')
+      }
 
+      slideshow.slideTo(Number(item.id))
+    }
+  })
 </script>
 <div>
   <ul class="flex flex-row text-2xl font-semibold min-w-min max-w-fit mx-auto bg-darker-600 py-5 px-6 rounded-lg">
@@ -193,7 +200,7 @@ document.addEventListener('astro:page-load', () => {
     <div class="swiper-wrapper w-full">
       {skill_categories.map((skillset) => (  
       <SwiperSlide id=`${skillset}` class="w-full">
-        <h3 class="text-orange pb-1 my-2 border-b border-yellow">{skillset}</h3> 
+        <!-- <h3 class="text-orange pb-1 my-2 border-b border-orange">{skillset}</h3>  -->
         {skills.filter(skill => skill.categories.find((item) => item === skillset)).map(( displaySkill:Skill ) => (
           <SkillBar skill={displaySkill} />
         ))}

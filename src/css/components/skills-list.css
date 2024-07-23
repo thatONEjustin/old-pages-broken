@@ -5,3 +5,155 @@
     }
   }
 }
+
+.skill-bar {
+  @apply my-3 pb-2 pl-1;
+
+  &-label {
+    @apply flex flex-row items-center mb-2;
+  }
+
+  &-icon {
+    @apply nf text-4xl mr-2;
+  }
+
+  &-bar {
+    @apply text-right pr-1 min-w-fit;
+  }
+
+  &-experience {
+    @apply text-sm px-1 min-w-fit;
+  }
+
+  &-endcap {
+    @apply nf nf-ple-pixelated_squares_big;
+  }
+  
+  &.yellow {
+    .skill-bar {
+      &-label h4,
+      &-icon,
+      &-endcap {
+        @apply text-yellow;
+      }
+
+      &-experience {
+        @apply text-dark;
+      }
+
+      &-bar {
+        @apply bg-yellow;
+      }
+    }
+  }
+
+  &.pink {
+    .skill-bar {
+      &-label h4,
+      &-icon,
+      &-endcap {
+        @apply text-pink;
+      }
+
+      &-experience {
+        @apply text-dark;
+      }
+
+      &-bar {
+        @apply bg-pink;
+      }
+    }
+  }
+
+  &.cyan {
+    .skill-bar {
+      &-label h4,
+      &-icon,
+      &-endcap {
+        @apply text-cyan;
+      }
+
+      &-experience {
+        @apply text-dark;
+      }
+
+      &-bar {
+        @apply bg-cyan;
+      }
+    }
+  }
+  &.blue {
+    .skill-bar {
+      &-label h4,
+      &-icon,
+      &-endcap {
+        @apply text-blue-400;
+      }
+
+      &-experience {
+        @apply text-dark;
+      }
+
+      &-bar {
+        @apply bg-blue-400;
+      }
+    }
+  }
+  &.purple {
+    .skill-bar {
+      &-label h4,
+      &-icon,
+      &-endcap {
+        @apply text-purple;
+      }
+
+      &-experience {
+        @apply text-dark;
+      }
+
+      &-bar {
+        @apply bg-purple;
+      }
+    }
+  }
+  &.red {
+    .skill-bar {
+      &-label h4,
+      &-icon,
+      &-endcap {
+        @apply text-red;
+      }
+
+      &-experience {
+        @apply text-dark;
+      }
+
+      &-bar {
+        @apply bg-red;
+      }
+    }
+  }
+  &.green {
+    .skill-bar {
+      &-label h4,
+      &-icon,
+      &-endcap {
+        @apply text-green;
+      }
+
+      &-experience {
+        @apply text-dark;
+      }
+
+      &-bar {
+        @apply bg-green;
+      }
+    }
+  }
+}
+/*
+.skillbar {
+
+
+}
+*/
