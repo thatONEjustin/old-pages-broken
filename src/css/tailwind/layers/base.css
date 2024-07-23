@@ -32,7 +32,7 @@
     @apply text-darker-100;
 
     + p {
-      @apply mb-8;
+      @apply my-8;
 
       &:last-of-type {
         @apply mb-0;

@@ -2,16 +2,16 @@
 const { skill } = Astro.props
 const max_years = 25
 ---
-<div class="my-3">
+<div class="my-3 pb-2">
   <div class="flex flex-row items-between">
     <div class="flex flex-row items-center justify-start">
-      <i class={`nf text-lg mr-1 ${skill.icon}`}></i>
-      <h4>{skill.label}</h4>
+      <i class={`nf text-2xl mr-2 ${skill.icon}`}></i>
+      <h4 class="text-xl">{skill.label}</h4>
     </div>
   </div>
   <div class="flex flex-row items-center">
-    <div class="bg-cyan text-right skillbar pr-1" style=`width: ${(skill.experience.years / max_years) * 100}%;`>
-      <p class="text-dark text-xs pr-1">{skill.experience.years}{skill.experience.moreThan && '+'} years</p>
+    <div class="bg-cyan text-right skillbar pr-1 min-w-fit" style=`width: ${(skill.experience.years / max_years) * 100}%;`>
+      <p class="text-dark text-sm px-1 min-w-fit">{skill.experience.years}{skill.experience.moreThan && '+'} years</p>
     </div>
     <span class="skillbar-endcap nf nf-ple-pixelated_squares_big text-cyan"></span>
   </div>

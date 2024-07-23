@@ -48,6 +48,96 @@ const skills: Array<Skill> = [
       'back-end',
     ]
   },
+  {
+    label: 'css',
+    icon: 'nf-dev-css3 text-blue',
+    experience: {
+      years: 15, 
+      moreThan: true
+    },
+    categories: [
+      'front-end'
+    ]
+  },
+  {
+    label: 'twig',
+    icon: 'nf-seti-twig text-green',
+    experience: {
+      years: 6, 
+      moreThan: false
+    },
+    categories: [
+      'front-end'
+    ]
+  },
+  {
+    label: 'laravel',
+    icon: 'nf-seti-twig text-red',
+    experience: {
+      years: 3, 
+      moreThan: false
+    },
+    categories: [
+      'front-end',
+      'back-end'
+    ]
+  },
+  {
+    label: 'bash',
+    icon: 'nf-md-bash text-green',
+    experience: {
+      years: 3, 
+      moreThan: false
+    },
+    categories: [
+      'back-end'
+    ]
+  },
+  {
+    label: 'TypeScript',
+    icon: 'nf-md-language_typescript text-blue',
+    experience: {
+      years: 4,
+      moreThan: true
+    },
+    categories: [
+      'front-end',
+      'back-end'
+    ]
+  },
+  {
+    label: 'sass',
+    icon: 'nf-dev-sass text-pink',
+    experience: {
+      years: 5,
+      moreThan: true
+    },
+    categories: [
+      'front-end'
+    ]
+  },
+  {
+    label: 'lua',
+    icon: 'nf-md-language_lua text-pink',
+    experience: {
+      years: 3,
+      moreThan: true
+    },
+    categories: [
+      'back-end'
+    ]
+  },
+  {
+    label: 'rust',
+    icon: 'nf-md-language_lua text-red',
+    experience: {
+      years: 1,
+      moreThan: false
+    },
+    categories: [
+      'back-end'
+    ]
+  },
 ]
 const max_years = 25
 const skill_categories = [... new Set(skills.map((skill:Skill) => skill.categories.find((item) => (item  != 'all'))).flat(1))]
@@ -71,10 +161,11 @@ document.addEventListener('astro:page-load', () => {
 
   for(var button of buttons) {
     button.addEventListener('click', function () {
-      slideshow.slideTo(this.id)
+      slideshow.slideTo(button.id)
     })
   }
 })
+
 </script>
 <div>
   <ul class="flex flex-row text-2xl font-semibold min-w-min max-w-fit mx-auto bg-darker-600 py-5 px-6 rounded-lg">
@@ -88,7 +179,7 @@ document.addEventListener('astro:page-load', () => {
     <div class="swiper-wrapper">
       {skill_categories.map((skillset) => (  
       <SwiperSlide id=`${skillset}`>
-        <h3 class="text-orange pb-1 mb-2 border-b border-yellow">{skillset}</h3> 
+        <h3 class="text-orange pb-1 my-2 border-b border-yellow">{skillset}</h3> 
         {skills.filter(skill => skill.categories.find((item) => item === skillset)).map(( displaySkill:Skill ) => (
           <SkillBar skill={displaySkill} />
         ))}
