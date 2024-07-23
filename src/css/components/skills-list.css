@@ -1,13 +1,31 @@
-.skills-list {
-  &-category {
-    &.active {
-      @apply fancy-border fancy-text;
+.skills {
+  &-list {
+    @apply relative -bottom-[1px];
+    @apply flex flex-row text-2xl font-semibold;
+    @apply min-w-min max-w-fit mx-auto;
+
+    &-category {
+      @apply py-5 px-6 rounded-lg rounded-b-none;
+      @apply border border-b-0 border-black;
+
+      &.active {
+        @apply border-orange bg-black;
+      }
     }
+  }
+
+  .skill-swiper {
+    @apply rounded-lg;
+    @apply border border-orange;
+  }
+
+  .swiper-slide {
+    @apply py-6 px-7;
   }
 }
 
 .skill-bar {
-  @apply my-3 pb-2 pl-1;
+  @apply mb-1 py-3;
 
   &-label {
     @apply flex flex-row items-center mb-2;

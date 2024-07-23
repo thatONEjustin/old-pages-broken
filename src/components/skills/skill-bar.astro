@@ -9,7 +9,7 @@ const max_years = 25
   </div>
   <div class="flex flex-row items-center">
     <div class=`skill-bar-bar` style=`width: ${(experience.years / max_years) * 100}%;`>
-      <p class=`skill-bar-experience`>{experience.years}{experience.moreThan && '+'} years</p>
+      <p class=`skill-bar-experience`>{experience.years}{experience.moreThan && '+'} year{experience.years > 1 && 's'}</p>
     </div>
     <span class="skill-bar-endcap"></span>
   </div>
