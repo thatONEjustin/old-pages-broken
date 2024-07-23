@@ -159,10 +159,24 @@ document.addEventListener('astro:page-load', () => {
 
   const buttons = document.getElementsByClassName('skillset-button')
 
+  buttons[0].classList.add('active')
+
   for(var button of buttons) {
     button.addEventListener('click', function () {
-      slideshow.slideTo(button.id)
+      slideTo(this)
     })
+  }
+
+  const cleaner = () => {
+    for(var button of buttons) {
+      button.classList.remove('active')
+    }
+  }
+
+  const slideTo = (item:Element) => {
+    cleaner()
+    item.classList.add('active')
+    slideshow.slideTo(item.id)
   }
 })
 
@@ -170,15 +184,15 @@ document.addEventListener('astro:page-load', () => {
 <div>
   <ul class="flex flex-row text-2xl font-semibold min-w-min max-w-fit mx-auto bg-darker-600 py-5 px-6 rounded-lg">
     {skill_categories.map((skillset, index) => (
-    <li class="mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all skillset-button" id=`${index}`>
+    <li class=`mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all skillset-button` id=`${index}`>
       {skillset}
     </li>
     ))}
   </ul>
   <div class="skill-swiper overflow-hidden">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper w-full">
       {skill_categories.map((skillset) => (  
-      <SwiperSlide id=`${skillset}`>
+      <SwiperSlide id=`${skillset}` class="w-full">
         <h3 class="text-orange pb-1 my-2 border-b border-yellow">{skillset}</h3> 
         {skills.filter(skill => skill.categories.find((item) => item === skillset)).map(( displaySkill:Skill ) => (
           <SkillBar skill={displaySkill} />
@@ -188,3 +202,9 @@ document.addEventListener('astro:page-load', () => {
     </div>
   </div>
 </div>
+
+<style>
+.active {
+  @apply fancy-border fancy-text;
+}
+</style>

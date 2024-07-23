@@ -1,6 +1,6 @@
 ---
-const { id } = Astro.props 
+const { id, class:className } = Astro.props 
 ---
-<div class="swiper-slide" {id}>
+<div class=`swiper-slide ${className}` {id}>
   <slot />
 </div>
