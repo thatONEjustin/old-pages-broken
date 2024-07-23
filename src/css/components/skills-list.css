@@ -1,0 +1,7 @@
+.skills-list {
+  &-category {
+    &.active {
+      @apply fancy-border fancy-text;
+    }
+  }
+}

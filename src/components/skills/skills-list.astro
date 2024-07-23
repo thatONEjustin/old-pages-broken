@@ -149,7 +149,7 @@ import 'swiper/css/navigation';
 import Swiper from 'swiper';
 
 document.addEventListener('astro:page-load', () => {
-  const slideshow = new Swiper('.skill-swiper', {
+  const slideshow = new Swiper('.skills-list-swiper', {
     navigation: {
       enabled: false,
     },
@@ -181,15 +181,15 @@ document.addEventListener('astro:page-load', () => {
 })
 
 </script>
-<div>
+<div class="skills-list">
   <ul class="flex flex-row text-2xl font-semibold min-w-min max-w-fit mx-auto bg-darker-600 py-5 px-6 rounded-lg">
     {skill_categories.map((skillset, index) => (
-    <li class=`mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all skillset-button` id=`${index}`>
+    <li class=`mr-4 last-of-type:mr-0 cursor-pointer text-dark-100 px-2 transition-all skills-list-category` id=`${index}`>
       {skillset}
     </li>
     ))}
   </ul>
-  <div class="skill-swiper overflow-hidden">
+  <div class="skills-list-swiper overflow-hidden">
     <div class="swiper-wrapper w-full">
       {skill_categories.map((skillset) => (  
       <SwiperSlide id=`${skillset}` class="w-full">
@@ -204,7 +204,4 @@ document.addEventListener('astro:page-load', () => {
 </div>
 
 <style>
-.active {
-  @apply fancy-border fancy-text;
-}
 </style>
