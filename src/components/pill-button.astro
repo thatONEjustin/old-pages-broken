@@ -1,8 +1,8 @@
 ---
-const { url = "#", target, class:className  } = Astro.props;
+const { url:href = "#", target, class:className  } = Astro.props;
 ---
 
-<a class={className} href={url} {target}>
+<a class={className} {href} {target}>
   <slot>Button Text</slot>
 </a>
 

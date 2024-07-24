@@ -2,13 +2,12 @@
 import { ViewTransitions } from "astro:transitions";
 import favicon from '@img/favicon.ico';
 
-// import "../css/icons.css";
 import "../css/main.css";
 
 import Header from "@layouts/header.astro";
 import Footer from "@layouts/footer.astro";
 
-// import * as main from '../js/main.js';
+import GoTop from '@components/go-top.astro';
 
 const { title = 'justin, a dev' } = Astro.props
 ---
@@ -24,18 +23,18 @@ const { title = 'justin, a dev' } = Astro.props
 
     <title>{title} | astro'd out</title>
 
-    <!-- Google font cdn -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-
     <ViewTransitions />
-
   </head>
+
   <body>
     <Header />
+
     <main transition:animate="slide">
       <slot />
     </main>
+
+    <GoTop />
+
     <Footer />
   </body>
 </html>

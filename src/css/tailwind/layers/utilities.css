@@ -19,6 +19,9 @@
     @apply w-full;
     @apply relative;
 
+    @screen md {
+    }
+
     @screen xl {
       @apply max-w-4xl px-0;
     }

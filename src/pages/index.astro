@@ -38,16 +38,13 @@ import { getCollection, getEntries } from 'astro:content'
           </p>
         </div>
 
-        <Image src={me} alt="Hi! I'm Justin Paelmo!" class="order-1 md:order-2 mx-auto md:mx-unset contrast-125 h-full w-auto rounded-full max-w-xs mb-8 md:mb-0 md:ml-12 border border-yellow"/>
+        <Image src={me} alt="Hi! I'm Justin Paelmo!" class="order-1 z-40 md:order-2 mx-auto md:mx-unset h-full w-auto rounded-full max-w-xs mb-8 md:mb-0 md:ml-12 border border-yellow"/>
       </div>
 
       <div class="flex flex-row gap-x-3 pt-8 justify-center text-xl">
         <PillButton class="text-3xl green" url="/resume.pdf" target="_blank">
           <NerdfontIcon icon="nf-md-file_document" /> resume
         </PillButton>
-        <!-- <PillButton color="cyan" url="/blog"> -->
-        <!--   <NerdfontIcon icon="nf-md-pen" /> blog -->
-        <!-- </PillButton> -->
       </div>
     </div>
 
@@ -68,7 +65,7 @@ import { getCollection, getEntries } from 'astro:content'
 
       <div class="about-timeframe">
         <h3 class="text-pink">2009 - 2016</h3>
-        <h4 class="text-cyan">AdvantageServices</h3>
+        <h4><a class="text-cyan no-underline" href="https://advantageservices.net" target="_blank">AdvantageServices</a></h3>
       </div>
 
       <p>I started professional web development in 2009 back in the SFTP, jQuery, and early PHP days. I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
@@ -77,7 +74,7 @@ import { getCollection, getEntries } from 'astro:content'
 
       <div class="about-timeframe mt-8">
         <h3 class="text-pink">2016 - now</h3>
-        <h4 class="text-cyan">WojoDesign</h3>
+        <h4><a class="text-cyan no-underline" href="https://wojodesign.com" target="_blank">WojoDesign</a></h3>
       </div>
 
       <p>This was a big move for me both in going from Florida to Chicago, and finally moving towards more modern tech stacks in web development.</p>
