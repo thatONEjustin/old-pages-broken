@@ -17,9 +17,10 @@ export const menu_data: MenuItem[] = [
     'icon': 'nf-dev-terminal',
     'scrollTo': 'about-me'
   },
-  // {
-  //   'label': 'blog',
-  //   'href': '/blog',
-  //   'icon': 'nf-md-keyboard'
-  // },
+  {
+    'label': 'skills',
+    'href': '#',
+    'icon': 'nf-md-keyboard',
+    'scrollTo': 'skills'
+  },
 ]
