@@ -6,7 +6,7 @@
 
     &-category {
       @apply py-5 px-6 rounded-lg rounded-b-none;
-      @apply border border-b-0 border-black;
+      @apply border border-b-0 border-transparent;
 
       &.active {
         @apply border-orange bg-black;
