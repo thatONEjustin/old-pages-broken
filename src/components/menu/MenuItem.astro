@@ -6,15 +6,44 @@ const active = (url_test:string) => {
   return ( url_test == Astro.url.pathname ) ? 'active' : ''
 }
 ---
+<script>
+const options = {
+  behavior: 'smooth',
+  block: 'start'
+}
+
+document.addEventListener('astro:page-load', () => {
+  const buttons = document.getElementsByClassName('menu-item')
+
+  const cleaner = (clicked_target) => {
+    for(var button of buttons) {
+      button.classList.remove('active')
+    }
+  }
+
+  const scroll_click = (event) => {
+      event.preventDefault()
+      cleaner(event.currentTarget)
+      document.getElementById(event.currentTarget.dataset.scroll).scrollIntoView(options)
+      event.currentTarget.classList.add('active')
+    }
+
+  for(var button of buttons) {
+    if(!button.classList.contains('scrollTo')) continue
+
+    button.addEventListener('click', scroll_click, false)
+  }
+})
+</script>
 <li>
   {item.scrollTo == null
   ? 
-  <a {href} class={active(href)}>
+  <a {href} class=`menu-item ${active(href)}`>
     <i class={`text-lg nf ${item.icon} pr-1`}></i>
     {item.label}
   </a>
   :
-  <a x-data={`{ id: '${item.scrollTo}', options: { behavior: 'smooth', block: 'start' }, }`} class="cursor-pointer" @click="document.getElementById(id).scrollIntoView(options)">
+  <a data-scroll={item.scrollTo} {href} class="cursor-pointer menu-item scrollTo">
     <i class={`text-lg nf ${item.icon} pr-1`}></i>
     {item.label}
   </a>

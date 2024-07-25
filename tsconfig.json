@@ -10,8 +10,8 @@
       "@components/*": [
         "src/components/*"
       ],
-      "@styles/*": [
-        "src/styles/*"
+      "@css/*": [
+        "src/css/*"
       ],
       "@js/*": [
         "src/js/*"

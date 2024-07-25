@@ -13,14 +13,19 @@ export const menu_data: MenuItem[] = [
   },
   {
     'label': 'about',
-    'href': '#',
+    'href': '#about-me',
     'icon': 'nf-dev-terminal',
     'scrollTo': 'about-me'
   },
   {
     'label': 'skills',
-    'href': '#',
+    'href': '#skills',
     'icon': 'nf-md-keyboard',
     'scrollTo': 'skills'
   },
+  // {
+  //   'label': 'blog',
+  //   'href': '/blog',
+  //   'icon': 'nf-md-pen'
+  // },
 ]

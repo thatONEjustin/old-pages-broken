@@ -1,6 +1,4 @@
 ---
-import moment from "moment";
-
 import { Image } from "astro:assets"
 
 import BaseLayout from "@layouts/base.astro";
@@ -10,18 +8,7 @@ import SocialMediaList from "@components/social-media-list.astro";
 import SkillsLists from "@components/skills/skills-list.astro";
 
 import resume from "/resume.pdf"
-import me from "../img/me.jpeg"
-
-import { getCollection, getEntries } from 'astro:content'
-
-// const projects_collection = await ge tCollection('projects')
-
-// const projects = projects_collection.sort((a,b) => {
-//   return moment(a.data.date).isAfter(moment(b.data.date));
-// })
-//
-// const project_entries = getEntries(projects)
-// console.log(project_entries)
+import me from "@img/me.jpeg"
 ---
 
 <BaseLayout>
@@ -49,16 +36,7 @@ import { getCollection, getEntries } from 'astro:content'
     </div>
 
   </section>
-  <!--
-  <section>
-    <div class="container mx-auto w-11/12 lg:w-full">
-      <h3>some projects I'm working on</h3>
-      <div class="p-8 border border-buffy border-opacity-30">
-        <Slider items={projects} />
-      </div>
-    </div>
-  </section>
--->
+
   <section id="about-me">
     <div class="justin-container">
       <h2 class="text-yellow text-center mb-2">about me &amp; work history</h2>
@@ -104,11 +82,4 @@ import { getCollection, getEntries } from 'astro:content'
 </BaseLayout>
 
 <style>
-#about-me {
-  .justin-container {
-    p {
-      @apply text-2xl;
-    }
-  }
-}
 </style>

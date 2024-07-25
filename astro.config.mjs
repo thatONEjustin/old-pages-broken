@@ -14,7 +14,7 @@ export default defineConfig({
     }),
     mdx(),
     alpinejs({
-      entrypoint: '/src/js/main'
+      entrypoint: '/src/js/alpine'
     }),
     // db()
   ]

@@ -40,7 +40,7 @@
   }
 
   &-experience {
-    @apply text-sm px-1 min-w-fit;
+    @apply text-sm px-1 min-w-fit font-semibold;
   }
 
   &-endcap {
@@ -105,7 +105,7 @@
       &-label h4,
       &-icon,
       &-endcap {
-        @apply text-blue-400;
+        @apply text-cyan;
       }
 
       &-experience {
@@ -113,7 +113,7 @@
       }
 
       &-bar {
-        @apply bg-blue-400;
+        @apply bg-cyan;
       }
     }
   }

@@ -1,30 +1,12 @@
-#intro {
-  @apply relative;
-
-  &:before {
-    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-    @apply pointer-events-none;
-    @apply opacity-30;
-
-    content: ' ';
-    background: rgb(83,89,124);
-    background: radial-gradient(circle, rgba(83,89,124,1) 0%, rgba(14,13,17,1) 100%);
+#about-me {
+  .justin-container {
+    p {
+      @apply text-2xl;
+    }
   }
 
-  &:after {
-    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-    @apply pointer-events-none;
-
-    content: ' ';
-
-    background-size: 16px 16px;
-    background-image:
-      linear-gradient(to right, rgba(248, 248, 242, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(248, 248, 242, 0.05) 1px, transparent 1px);
+  .about-timeframe {
+    @apply fancy-border pb-1 mb-3 text-pink;
+    @apply flex flex-row items-center justify-between;
   }
-}
-
-.about-timeframe {
-  @apply fancy-border pb-1 mb-3 text-pink;
-  @apply flex flex-row items-center justify-between;
 }
