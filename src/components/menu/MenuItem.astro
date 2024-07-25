@@ -15,18 +15,24 @@ const options = {
 document.addEventListener('astro:page-load', () => {
   const buttons = document.getElementsByClassName('menu-item')
 
-  const cleaner = (clicked_target) => {
+  const cleaner = () => {
     for(var button of buttons) {
       button.classList.remove('active')
     }
   }
 
-  const scroll_click = (event) => {
-      event.preventDefault()
-      cleaner(event.currentTarget)
-      document.getElementById(event.currentTarget.dataset.scroll).scrollIntoView(options)
-      event.currentTarget.classList.add('active')
-    }
+  let current:EventTarget
+
+  const scroll_click = (event:Event) => {
+    event.preventDefault()
+    if(!event.currentTarget.dataset.scroll) return;
+
+    current = event.currentTarget
+
+    cleaner()
+    document.getElementById(current.dataset.scroll).scrollIntoView(options)
+    current.classList.add('active')
+  }
 
   for(var button of buttons) {
     if(!button.classList.contains('scrollTo')) continue

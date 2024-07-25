@@ -7,21 +7,22 @@ export type MenuItem = {
 
 export const menu_data: MenuItem[] = [
   {
-    'label': 'home',
-    'href': '/',
-    'icon': 'nf-custom-home'
+    label: 'home',
+    href: '#',
+    icon: 'nf-custom-home',
+    scrollTo: 'top'
   },
   {
-    'label': 'about',
-    'href': '#about-me',
-    'icon': 'nf-dev-terminal',
-    'scrollTo': 'about-me'
+    label: 'about',
+    href: '#about-me',
+    icon: 'nf-dev-terminal',
+    scrollTo: 'about-me'
   },
   {
-    'label': 'skills',
-    'href': '#skills',
-    'icon': 'nf-md-keyboard',
-    'scrollTo': 'skills'
+    label: 'skills',
+    href: '#skills',
+    icon: 'nf-md-keyboard',
+    scrollTo: 'skills'
   },
   // {
   //   'label': 'blog',
