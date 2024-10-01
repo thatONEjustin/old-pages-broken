@@ -6,23 +6,19 @@ import 'swiper/css/navigation';
 
 const { items:slides = [] } = Astro.props
 ---
-<script>
-import { Navigation } from 'swiper/modules';
-import Swiper from 'swiper';
 
-document.addEventListener('astro:page-load', () => {
-  const _slideshow = new Swiper('.swiper', {
-    modules: [Navigation],
-    navigation: {
-      enabled: true,
-      nextEl: '.justin-next',
-      prevEl: '.justin-prev',
+<div
+  class="swiper"
+  x-data="{
+    swiperOptions: {
+      navigation: {
+        enabled: true,
+        nextEl: '.justin-next',
+        prevEl: '.justin-prev',
+      }
     }
-  })
-})
-</script>
-
-<div class="swiper">
+  }"
+  x-swiper="swiperOptions">
   <div class="swiper-wrapper">
     {slides.map(item =>
       <SwiperSlide>

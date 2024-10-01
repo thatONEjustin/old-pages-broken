@@ -1,8 +1,9 @@
 ---
 import SwiperSlide from '@components/slider/Slide.astro'
-import SkillBar from './skill-bar.astro'
+import SkillBar from './bar.astro'
 
 import { skills_data } from '@js/data/skills'
+import type { Skill } from '@js/data/skills'
 
 const skill_categories = [... new Set(skills_data.map((skill:Skill) => skill.categories.find((item) => (item  != 'all'))).flat(1))]
 
@@ -26,18 +27,27 @@ import 'swiper/css/navigation';
     buttons[0].classList.add('active')
 
     for(var button of buttons) {
-      button.addEventListener('click', function () {
-        slideTo(this)
+      button.addEventListener('click', event => {
+        if(event.currentTarget == null) return;
+        slideTo(event.currentTarget.id)
       })
     }
 
-    const slideTo = (item:Element) => {
+    const slideTo = (slide_index:(string|null)) => {
+      if(slide_index === null) return;
       for(var button of buttons) {
         button.classList.toggle('active')
       }
-
-      slideshow.slideTo(Number(item.id))
+      slideshow.slideTo(Number(slide_index))
     }
+
+    // const slideTo = (item:(Element|EventTarget|null)) => {
+    //   if(item === null) return;
+    //   for(var button of buttons) {
+    //     button.classList.toggle('active')
+    //   }
+    //   slideshow.slideTo(Number(item.id))
+    // }
   })
 </script>
 <div class="skills">
