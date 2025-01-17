@@ -29,7 +29,8 @@ import 'swiper/css/navigation';
     for(var button of buttons) {
       button.addEventListener('click', event => {
         if(event.currentTarget == null) return;
-        slideTo(event.currentTarget.id)
+        const current = event.currentTarget as HTMLElement
+        slideTo(current.id)
       })
     }
 
@@ -40,14 +41,6 @@ import 'swiper/css/navigation';
       }
       slideshow.slideTo(Number(slide_index))
     }
-
-    // const slideTo = (item:(Element|EventTarget|null)) => {
-    //   if(item === null) return;
-    //   for(var button of buttons) {
-    //     button.classList.toggle('active')
-    //   }
-    //   slideshow.slideTo(Number(item.id))
-    // }
   })
 </script>
 <div class="skills">

@@ -7,7 +7,7 @@ const active = (url_test:string) => {
 }
 ---
 <script>
-const options = {
+const options:ScrollIntoViewOptions = {
   behavior: 'smooth',
   block: 'start'
 }
@@ -21,16 +21,16 @@ document.addEventListener('astro:page-load', () => {
     }
   }
 
-  let current:EventTarget
-
   const scroll_click = (event:Event) => {
     event.preventDefault()
-    if(!event.currentTarget.dataset.scroll) return;
+    if(!event.currentTarget) return;
 
-    current = event.currentTarget
+    const current = event.currentTarget as HTMLElement
 
     cleaner()
-    document.getElementById(current.dataset.scroll).scrollIntoView(options)
+    const scroll_id = (current.dataset.scroll) ? current.dataset.scroll : '';
+
+    document.getElementById(scroll_id)!.scrollIntoView(options)
     current.classList.add('active')
   }
 
